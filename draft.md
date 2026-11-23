@@ -1,7 +1,7 @@
 # On the Limits of Reinforcement Learning for LLM-Agent Safety: Formal Equivalence Is Not Method Transfer
 
-!!! warning "Status: DRAFT"
-    Draft, not final. Not fully human-reviewed. See [the AI-use statement](../ai-use.md).
+!!! warning "AI-generated draft"
+    Written by Claude (Anthropic) under Robin Chauhan's direction; not fully human-reviewed. See [the AI-use statement](../ai-use.md).
 
 
 *Draft v0.2, 2026-11-20. Position paper.*
