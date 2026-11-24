@@ -18,7 +18,7 @@ A reply to McLean et al. [1], who argue that LLM-agent safety is an RL problem b
 | `probe_c1/items.py`, `run.py`, `analyze.py` | Items, runner and analysis |
 | `probe_c1/results.jsonl`, `analysis_output.md` | Raw results (240 trials) and the analysis |
 
-The earlier version (v0.2, "On the Limits of Reinforcement Learning for LLM-Agent Safety") is in the git history.
+`draft.pdf`, `draft.md` and `onepager.md` are kept only so that old links still work. `onepager.pdf` and `draft.pdf` are the same file as `icml/paper.pdf`. The earlier version (v0.2, "On the Limits of Reinforcement Learning for LLM-Agent Safety") is in the git history.
 
 ## Related repositories
 
