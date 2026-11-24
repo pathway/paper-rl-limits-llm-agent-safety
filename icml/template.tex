@@ -1,0 +1,67 @@
+% Built by build.py from ../draft_conditions_short.md. Edit the markdown, not paper.tex.
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{placeins}  % \FloatBarrier keeps tables before the references
+\usepackage{xurl}  % lets long URLs break at any character
+\usepackage{hyperref}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage{icml2026}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{newunicodechar}
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{✗}{\ensuremath{\times}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{²}{\ensuremath{^2}}
+% pandoc output helpers
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+
+\icmltitlerunning{%%RUNNING%%}
+
+\begin{document}
+%%HEADSTART%%
+  \icmltitle{%%TITLE%%}
+  \begin{icmlauthorlist}
+    \icmlauthor{Anonymous Authors}{anon}
+  \end{icmlauthorlist}
+  \icmlaffiliation{anon}{Anonymous Institution}
+  \icmlcorrespondingauthor{Anonymous Authors}{anon@example.com}
+  \icmlkeywords{AI safety, reinforcement learning, LLM agents, position paper}
+  \vskip 0.3in
+%%HEADEND%%
+\printAffiliationsAndNotice{}
+
+\begin{abstract}
+%%ABSTRACT%%
+\end{abstract}
+
+%%BODY%%
+
+\FloatBarrier
+\section*{Impact Statement}
+This paper examines when the guarantees of reinforcement-learning safety tools apply to LLM agents. Its aim is to prevent false assurance: a guarantee that is cited outside its assumptions can lead builders to deploy agents with less oversight than they need. The paper proposes no new capability. The probe in Section 5 used two simple, published styles of prompt injection against a commercial agent and found no successful attack; it discloses no new attack method.
+
+\section*{AI Disclosure Statement}
+A large language model assisted with the literature search, the drafting and editing of the text, and the code of the probe. The authors are responsible for all content.
+
+\begin{thebibliography}{99}
+\small
+%%BIBITEMS%%
+\end{thebibliography}
+
+\end{document}
