@@ -28,7 +28,7 @@ A stage reads only from stages with lower numbers.
 | `100_analysis/` | `analyze.py` (pure, tested) computes `facts.json` (each count comes with the noun phrase of its set) and `sensitivity.md` (which facts change when a set or a row is left out) | computed |
 | `200_draft/draft.md` | Prose and imports only | argument |
 | `300_render/` | `build.py` (shell), `render.py` (pure), `checks.py`, template, style; output in `out/` | presentation |
-| `900_archive/` | Earlier drafts, the v0.2 rebuttal, the removed probe | not used |
+| `900_archive/` | Earlier drafts, the v0.2 draft, the removed probe | not used |
 
 ## Claims, sets and stamps
 
