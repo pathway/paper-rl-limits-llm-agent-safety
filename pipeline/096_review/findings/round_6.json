@@ -1,0 +1,145 @@
+[
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "Abstract (paper.tex:52) vs Abstract (paper.tex:52) and Conclusion (paper.tex:286)",
+  "claim": "\"the RL safety tools that \\citet{mclean2026} propose for LLM agents keep their guarantees only under conditions that deployed agents do not meet\"",
+  "problem": "The opening thesis is universal. The same abstract and the conclusion then say one guarantee survives deployment. McLean et al. name shielding among their tools, so the shield is a tool they propose. The headline contradicts the exception, and a reader taking only the first sentence gets a stronger claim than the paper supports. It needs 'all but one' or 'most'.",
+  "evidence": "paper.tex:52 \"keep their guarantees only under conditions that deployed agents do not meet\" and, later in the same paragraph, \"One guarantee survives deployment now, for the properties that its rules name over typed tool calls\". paper.tex:286 \"One guarantee survives deployment, a shield over typed actions with a safe fallback\". 075_mclean_conditions and 065_tool_conditions/cells.csv treat shielding as one of McLean's four named techniques.",
+  "severity": "overclaim",
+  "key": "K01",
+  "fix": "Change the first sentence to say that all but one of the guarantees (the shield over typed tool calls, given a safe fallback) need conditions that deployed agents do not meet."
+ },
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "Section 6 'Alternative views', third item (paper.tex:259) vs Introduction 'Position' (paper.tex:58) and Table 3 (paper.tex:215)",
+  "claim": "\"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove\"",
+  "problem": "The paper defines 'binding' as a condition that fails in deployed agents. The introduction lists the binding obstacles as S4, S6, U1, U2 and U4, with U3 only 'in reported cases', and puts S2 and S3 in a separate group that binds for world-state properties. Line 259 drops that qualification: it lists U3 as binding without it, and the same sentence calls S2 and S3 'True... relaxed'. Table 3 marks U3 as ~ (not failing) in D-AGENT, and the K09 count of 'three of four unstated' excludes U3. The same term has different extents in two places, and one of them contradicts the table.",
+  "evidence": "paper.tex:58 \"We call a condition binding when it fails in deployed agents and has not been shown to yield to the scaling and function approximation\" and \"(U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases)\". paper.tex:259 \"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove\". paper.tex:215 \"U3 ignores mechanism & \u2713 & \\textasciitilde{} & \\textasciitilde{} & \\textasciitilde{} & \u2713 & \\textasciitilde{} & \\textasciitilde{}\".",
+  "severity": "unclear",
+  "key": "K02",
+  "fix": "In line 259 write 'S4, S6, U1, U2 and U4, and U3 in reported cases', matching line 58, and say whether S2 and S3 bind for world-state properties as line 58 says."
+ },
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "Table 2 (paper.tex:191), Table 3 (paper.tex:210, 212), Introduction step 2 (paper.tex:64)",
+  "claim": "\"where agents are deployed, five of six stated conditions fail\" (K09), with D-AGENT S4 and S6 as x cells",
+  "problem": "D-AGENT is defined in Table 2 as 'POMDP with hidden world state, no reset'. The S4 cell (state observed) and the S6 cell (trials repeat or every state recoverable) are then x because of that definition, not because of evidence about deployed agents. This makes two of the five failures circular. The paper's own incident evidence is that recovery did happen, through a vendor snapshot or a rollback, and its call to action says to keep such a rollback. So 'no reset' is an assumption about the setting, not a measured fact. The count that carries the argument rests partly on that definition. Line 64 discloses only the S5 convention and the U2 simulations, not this.",
+  "evidence": "paper.tex:191 \"Deployment & D-AGENT & Deployed tool-using agent; POMDP with hidden world state, no reset\". paper.tex:210 \"S4 observed by agent & \u2713 & \u2713 & \u2713 & \\textasciitilde{} & \u2713 & \\textasciitilde{} & \u2717\". paper.tex:212 \"S6 repeat or recover & \u2713 & \u2713 & \u2713 & \\textasciitilde{} & \\textasciitilde{} & \\textasciitilde{} & \u2717\". paper.tex:64 \"These counts rest on our convention for S5 and, for U2, on simulations.\"",
+  "severity": "overclaim",
+  "key": "K09",
+  "fix": "Say in Section 4 and in line 64 that the S4 and S6 cells for D-AGENT follow from how the setting is posed (hidden state, no reset available to the agent), and that the incident reports support them but do not test them. Or define D-AGENT without 'no reset'."
+ },
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "Introduction 'Position' (paper.tex:58) vs Table 1 (paper.tex:101-102) and Section 3 second fact (paper.tex:124)",
+  "claim": "\"S5 also fails, but only by our convention (\u00a7\\ref{sec:settings}), and the safety filters do not need it.\"",
+  "problem": "Table 1 marks both safety filters as needing S5 in part. Its caption says a word in a cell means 'needed in part'. The Wachi cell reads 'filter'. The appendix cell says the safety guarantee holds when the agent executes only actions in the certified safe set. The Alshiekh cell reads 'input'. Section 3 says the two guarantees 'need little control of the learner'. 'Do not need it' is stronger than the table and the body, and is used to set S5 aside as irrelevant to the one transfer result.",
+  "evidence": "paper.tex:101 \"Safe exploration \\citep{wachi2023} & T & Safe w.p. 1-\u03b4 & threshold &  &  & \u2713 & filter & \u2713 \\\\\". paper.tex:102 \"Shielding \\citep{alshiekh2018} & U & Specification never violated & \u2713 & abstr. & abstr. & label & input &  \\\\\". paper.tex:94 \"A word: needed in part\". paper.tex:124 \"\\textbf{Two safety guarantees need little control of the learner}\". paper.tex:512 \"S5, a filter with a penalty: the safety guarantee (Theorem 4.1) holds when the agent executes only actions in the certified safe set\".",
+  "severity": "unclear",
+  "key": "K07",
+  "fix": "Replace 'do not need it' with 'need it only in part: control of which actions are executed, not of the learner's update'."
+ },
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "Abstract (paper.tex:52); Section 3 first fact (paper.tex:122); Table 1 Altman S6 cell (paper.tex:99)",
+  "claim": "\"The safe-exploration and constrained-MDP papers they cite assume what deployment lacks: an emergency stop that resets the environment, or an MDP that is ergodic under every policy; a third bounds the cost only in expectation over repeated runs.\"",
+  "problem": "The first two assume things that deployment lacks. The third (Altman) does not assume anything absent from deployment. An expectation constraint needs repeated trials, and deployed agents do run many episodes across users. The paper's actual point is that such a constraint gives no bound on a single run. That is a weakness of the guarantee, not an assumption that fails. Yet the sentence groups it under 'assume what deployment lacks', and section 3 says 'Each of the three uses a form of S6'. The table cell is only 'expect.', not a full \u2713, so the grouping blurs the paper's own full-versus-part distinction.",
+  "evidence": "paper.tex:52 \"a third bounds the cost only in expectation over repeated runs\". paper.tex:122 \"Each of the three uses a form of S6: a reset, ergodicity, or repeated runs over which an expectation is meaningful.\" paper.tex:99 \"CMDP, linear programming \\citep{altman1999} & N & Optimal policy under expected-cost constraints & \u2713 & \u2713 & Part I & \u2713 &  & expect. \\\\\".",
+  "severity": "overclaim",
+  "key": "K05",
+  "fix": "Reword the abstract: the first two assume a reset or ergodicity, which deployment lacks; the third gives no bound on the cost of a single run."
+ },
+ {
+  "source": "claude",
+  "lens": "citations-main",
+  "where": "Section 3 (conditions), first fact, sentence on the exploration papers: \"one assumes that 'it is possible to reach any state from s0' [Assumption C.1, tse2025]\"; paper.tex line 101 or nearby",
+  "claim": "Tse et al. (2025) assume that it is possible to reach any state from s0. The paper offers this as evidence that the exploration papers assume reversibility or ergodicity and so do not fill the S6 gap.",
+  "problem": "Assumption C.1 is an implementation assumption in Appendix C. It makes the top eigenvector of the default representation positive, so that its logarithm can be taken for numerical stability. It is not an assumption of the safety or convergence result and is not about recoverability. The paper presents it as an assumption of the tool alongside Wachi's reset and Satija's ergodicity. Wachi's reset and Satija's ergodicity do enter their safety guarantees. The Tse assumption does not, so the sentence overstates the support for \"assume reversibility\". The paper's own Table 1 marks tse S6 only as \"exper.\", which fits an experimental, not a theoretical, role.",
+  "evidence": "045_fulltext/tse2025.txt:1759-1765: \"We now show that under mild assumptions, the top eigenvector of the DR is positive, allowing us to take the logarithm. We first present a mild assumption: Assumption C.1. There is only one start state, s0 , and it is possible to reach any state from s0 under the default policy ... We also perform experiments in grid world environments, where it is possible to reach any state from the start state. Under these conditions, Assumption C.1 easily holds. We now present the following proposition: Proposition C.2.\"",
+  "severity": "overclaim",
+  "key": "K02",
+  "fix": "Say that Tse et al. state this only as a mild numerical assumption (Appendix C) that holds in their grid worlds. Do not group it with the reset and ergodicity assumptions that the safety guarantees need. Or cut the clause and keep the point that the tested environments are 100-step episodic grid worlds."
+ },
+ {
+  "source": "claude",
+  "lens": "citations-rest",
+  "where": "paper.tex:259 (Alternative views, third paragraph, last sentence)",
+  "claim": "\"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove.\"",
+  "problem": "This lists U3 as a binding condition without qualification. The paper defines binding as failing in deployed agents. Elsewhere U3 does not fail outright in D-AGENT: it is graded ~ and is said to fail only in reported cases (evaluations and the 2026 incident). The Introduction and the Call to action make the qualification; this sentence drops it. It is the only place that states the key claim's list of binding conditions without the qualifier, so it contradicts K02 and the paper's own table.",
+  "evidence": "paper.tex:259: \"the binding conditions are S4, S6 and U1--U4\". paper.tex:58: \"U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases\". paper.tex:215: \"U3 ignores mechanism & \u2713 & ~ & ~ & ~ & \u2713 & ~ & ~\", so D-AGENT is ~. paper.tex:266: \"(U3 in reported cases)\".",
+  "severity": "overclaim",
+  "key": "K02",
+  "fix": "Write \"S4, S6, U1, U2 and U4, and U3 in reported cases\"."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K02",
+  "problem": "key claim scored qualify",
+  "evidence": "The paper's own text disagrees on whether S2 and S3 are binding. The claim, and paper.tex:58, put S2 and S3 among the binding obstacles: \"not only the gaps of representation and model that \\citet[\u00a75]{mclean2026} name as the first limit (S2, S3), which bind for properties of world state\". Line 58 defines binding as failing in deployed agents and \"has not been shown to yield to the scaling and function approximation\". Yet paper.tex:259 says \"True for S2 and S3: the cited CMDP method runs model-free with neural networks \\citep{satija2020}, and the safe-exploration method uses a Gaussian-process safety model with a deep RL learner\" (i.e. they have yielded). It then says \"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove.\" Line 232 adds \"S3 fails in all five LLM columns, yet RL works in whole-reply training... methods survive without their finiteness guarantees.\" By the paper's own definition S3 has been shown to yield, so \"S3 binds for properties of world state\" has no support in the paper, and the binding list is stated two ways. The S4, S6 and U1/U2/U4 parts match 085_setting_conditions/cells.csv: S4 D-AGENT is \u2717, S6 \u2717, U1 \u2717, U2 \u2717, U4 \u2717, U3 ~, which fits \"U3 in reported cases\". The R39 point on S4 is settled and not used.",
+  "severity": "overclaim",
+  "key": "K02",
+  "fix": "Drop S3, and S2 unless shown, from the binding list in K02 and in paper.tex:58. Or state in both places that S2 and S3 bind only for properties of world state, and align :259 so it does not list the binding conditions as only S4, S6 and U1--U4."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K12",
+  "problem": "key claim scored qualify",
+  "evidence": "The claim says the label-level shield \"keeps its guarantee for the properties its rules name\" and needs no world model. The paper (paper.tex:243) makes this conditional, and the claim leaves out the conditions: \"If the shield sees every tool call and the property is over action labels ... This specialisation is ours, and it needs a safe action, such as halting, at every step; the certified safe set below needs the same assumption.\" It also says \"the guarantee is only as strong as the components that enforce them\" and \"S1 holds only in part\". The Alshiekh passage (045_fulltext/alshiekh2018.txt:1205-1206) supports the \"unavoidable\" half: \"some approximate model of when which action is unsafe needs to be available. We argue that this is unavoidable if the allowed actions depend on the state of the environment\". The \"abstraction can be trivial\" half is the authors' own specialisation, not Alshiekh's (his single-state case, alshiekh2018.txt:886-892, concerns state labels), and the paper marks it \"ours\". The claim should carry: only if the shield sees every call and a safe fallback exists at every step.",
+  "severity": "overclaim",
+  "key": "K12",
+  "fix": "Reword K12 to: a shield over typed tool-call labels, if it sees every call and a safe action exists at every step, needs no model of world dynamics (our specialisation) and keeps its guarantee for the properties its rules name; a property of world state needs a model (S2), which Alshiekh et al. call unavoidable when allowed actions depend on the environment state."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K11",
+  "problem": "key claim scored qualify",
+  "evidence": "I checked the paper as rendered. The setting table at 300_render/out/paper.tex:203-218 matches 085_setting_conditions/cells.csv cell for cell. The tool table at paper.tex:97-114 matches 065_tool_conditions/cells.csv. Every quote in 085_setting_conditions/reasons.csv and 065_tool_conditions/cells.csv that I scripted against 045_fulltext was found. The one script miss was an ellipsis quote, and it is at mohammedalamen2025b.txt:236, 'state pair (sE , sM ) can be visited infinitely often'. I also read these by hand: wachi2023.txt:95 '(fully-observable) state' and :236-239 'Assumption 3.3 (Emergency stop action)'; satija2020.txt:178 'Assumption 3.1 (Stationarity). The MDP is ergodic for any policy'; kaelbling1998.txt:115-116 and :66; mohammedalamen2025a.txt:200, :732 and :1025; tse2025.txt:94; altman1999.txt:1220. All the full cells that K10 uses (altman S2/S4, satija S4/S5/S6, wachi S4/S6, mohammedalamen2025a S2/S3/S4, mohammedalamen2025b S4/S5/S6, kaelbling S2/S3, tse S4/S5) are supported by quotes. Shielding has no full cell on S2-S6, so the exception holds. The D-AGENT cells are supported by the reasons: S2-S6 fail, U1, U2 and U4 fail, S1 and U3 are partial. The wallace2024.txt:21 and :57 and shapira2026 sources bear on the U4 reason. One qualification remains. The S1 cells in T-CHAT, T-PRM and T-AGENT are graded '~' (table row 'S1 spec given'). The paper defines S1 as 'Safety specification is given' (064_conditions/stated.csv). The paper's own reason for these cells is paper.tex:437: 'each is given, but none is a specification of safety.' By the paper's own definition, S1 therefore does not hold in training LLM columns. If graded as the definition reads, S1 would fail outright next to S3, and K09's 'no more than one fails outright' would not hold for T-CHAT, T-PRM or T-AGENT. The paper lists what the counts rest on at paper.tex:64: 'These counts rest on our convention for S5 and, for U2, on simulations.' It does not list the S1 grading. Related: the S3 cell is marked failing although paper.tex:441 says the space is 'finite only as the set of all token sequences'. The R04 and R06 findings on S3 are deferred, so I do not use S3 as grounds.",
+  "severity": "overclaim",
+  "key": "K11",
+  "fix": "Change the S1 training cells to the grade the definition implies, or state the S1 'partly' grading as a convention. Add it to the sentence at paper.tex:64 that lists what the counts rest on. Add that the T-column 'at most one outright failure' count depends on it."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K18",
+  "problem": "key claim scored qualify",
+  "evidence": "stance.csv line 2 and paper.tex:159 (S1 row) say the POMDP state includes \"the user's intents, safety constraints\", 'which the agent does not observe'. mclean2026.txt:42 says only: 'However, this complete task specification is unlikely to be fully observed by the AI agent'. McLean et al. do not say the agent never observes it. All 14 quoted fragments in stance.csv were found verbatim in mclean2026.txt. The quotes and incident descriptions in paper.tex also match (state-file cause, Feb 2025, 'to mask the deletion', 'diagnostic lens', 'profound opportunity').",
+  "severity": "overclaim",
+  "key": "K18",
+  "fix": "Change 'which the agent does not observe' to 'which the agent is unlikely to observe fully' in stance.csv S1 (and in paper.tex:159)."
+ },
+ {
+  "source": "codex",
+  "lens": "codex",
+  "where": "Table Conditions by setting and phase; Appendix Reasons for the setting cells, S2",
+  "claim": "T-AGENT holds S2 partly.",
+  "problem": "The stated reason supplies no environment model: building a sandbox does not establish that its transitions are given. The reason explicitly says tool-call responses are not modelled, which also justifies the D-AGENT failure. Without an identified modelled component, the partial grade is unsupported and preserves the key claim that no training column fails more than one condition outright.",
+  "evidence": "085_setting_conditions/reasons.csv, S2: \"T-AGENT: the sandbox is built by the designer but its response to tool calls is not modelled.\" The same row says: \"D-AGENT fails: the effect of a tool call on the world is not modelled.\" 064_conditions/stated.csv defines S2 as \"Environment model is given\".",
+  "severity": "unsupported",
+  "key": "K11",
+  "fix": "Identify the model actually available in T-AGENT and explain what it covers; otherwise change S2/T-AGENT to x and recompute the affected counts and prose."
+ },
+ {
+  "source": "codex",
+  "lens": "codex",
+  "where": "Call to action, For agent builders",
+  "claim": "the cited tools that need S6 assume such calls do not exist",
+  "problem": "Here 'such calls' means calls the agent cannot undo. S6 also permits recovery through a usable reset, including external intervention; it does not require every action to have an inverse the agent can execute. The advice overstates what the cited tools exclude.",
+  "evidence": "064_conditions/stated.csv defines S6 as \"Trials repeat, or every state is recoverable within the decision process (by the agent, or by a reset it can use)\". 047_extracts/wachi2023/extracts.csv, e1: \"The agent is allowed to execute the emergency stop action and reset the environment if and only if the probability of guaranteed safety is not sufficiently high.\" e9: \"it is usually better to guarantee safety, even with human interventions\".",
+  "severity": "overclaim",
+  "key": "none",
+  "fix": "Replace the clause with: \"the cited tools that need S6 assume repeatable trials or recovery through the agent or a usable reset.\""
+ }
+]

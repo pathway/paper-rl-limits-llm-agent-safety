@@ -1,0 +1,10 @@
+id,kind,locator,text,tex
+e1,line,§3,"If the agent exceeds the time limit, we reset the environment such that the goal state remains the same, but the robot arm moves to a different starting state.",
+e2,line,,"These problems, when formulated as episodic reinforcement learning tasks, can easily be specified to align well with our intended goal: −1 reward every time step with termination upon reaching the goal state, called minimum-time tasks.",
+e3,line,,We use continuous state space S and action space A for all our tasks.,
+e4,line,,"After executing the action, the agent receives the next state St+1 at the subsequent timestep t + 1 and a reward Rt+1 according to a transition probability density function St+1 , Rt+1 ∼ p(·, ·|St , At ).",
+e5,line,,"Finally, using four distinct real-robotic platforms, we show that it is possible to learn pixel-based policies from scratch within two to three hours using constant negative rewards.",
+e6,line,,"In total, we conducted multiple independent runs in our experiments, which took nearly 200 hours of usage on real robots.",
+e7,line,,"Note that robot experience time does not include time required to reset the environment, charging the batteries, etc.",
+e8,line,,Our model-free reinforcement learning system,
+e9,line,,identify the goal-hit rate of the initial policy as a robust early indicator for learning success,

@@ -1,0 +1,101 @@
+[
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Section 7, open problem 1",
+  "claim": "Find a method whose return under any i is within epsilon of its return with i empty.",
+  "problem": "The problem has a trivial solution: a method that ignores all environment text, or a constant policy, meets the condition. A utility condition is missing.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "wrong",
+  "key": "none",
+  "fix": "Add a utility requirement: the method's return with i empty must also be within epsilon of the best policy's return with i empty."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Introduction (Position); Section 6; Section 7",
+  "claim": "The binding obstacles are ... objectives, oversight and principals ... (U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases)",
+  "problem": "'Binding' is defined as: fails in deployed agents and not shown to yield to scaling. The definition does not require that a cited guarantee needs the condition. Table 1 shows the need for S1-S6 only; the paper says 'we do not cross U1-U4 with each tool', and by its own reading the surviving shield does not use U1-U4. So that U1, U2, U4 block the transfer of guarantees is asserted, not shown.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "overclaim",
+  "key": "K02",
+  "fix": "Smallest truthful fix: in the Position, state that for U1-U4 the need is our reading of the learning and optimality guarantees, not shown per tool (Section 1 already says 'This is a reading, not a count'). Do not add a new table. If key K02 wording changes, revise key.csv with revised_in 'round 10'."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Section 7, open problem 2",
+  "claim": "This weakens S6 to the assumption that halting is safe.",
+  "problem": "Since round 9 the same paragraph also assumes that the agent can return within the safe set in a bounded expected number of steps, which is a restricted form of S6. The sentence is now false.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "wrong",
+  "key": "K13",
+  "fix": "Say that S6 is weakened to two assumptions: halting is safe, and (for near-optimality) return within the safe set."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Abstract; Section 4; Conclusion",
+  "claim": "keep their guarantees only under conditions that deployed agents do not meet; seven of eight need in full a condition",
+  "problem": "Section 1 now says a guarantee without its condition 'is then not established', and Appendix D defines a filled cell as 'uses the condition'. The abstract's 'keep their guarantees only under' still reads as necessity.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "overclaim",
+  "key": "K01",
+  "fix": "Abstract: reword so the guarantees are 'proved only under conditions'. Section 1: add one clause that 'needs' in this paper means that the proof or method uses the condition. Do not change the counts."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Table 1 (065_tool_conditions/cells.csv), S3 column",
+  "claim": "satija2020 S3 'proofs'; tse2025 S3 'theory'; mohammedalamen2025b S3 'tabular' (all shown as needed in part)",
+  "problem": "Appendix D: a filled cell means the guarantee, problem statement or method uses the condition; a check mark is 'needed in full'. For these three works the stated guarantee is the theory, which is finite or tabular, so the guarantee needs S3 in full, as for mohammedalamen2025a and kaelbling1998. Grading is inconsistent. Verify each against the full text before changing: mohammedalamen2025b allows 'finite or countably infinite' states, which may justify 'in part'.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "unsupported",
+  "key": "none",
+  "fix": "For each of the three cells decide from the full text whether the guarantee needs finite spaces in full; change the cell value in cells.csv and its reason where it does; keep where it does not and say why. Check every fact and sentence that the change moves (e.g. shield/S3 statements, safety_failing counts)."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Section 7, open problem 3",
+  "claim": "Bound the probability of an undetected attack as a function of the number n of interactions.",
+  "problem": "Under-specified: the trivial bound 1 satisfies it.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Ask for a protocol and a bound that stays below 1 as n grows (or that is tight)."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Section 4, 'Training is where the tools fit best'",
+  "claim": "No LLM training column fails more than one of the conditions outright",
+  "problem": "The paper counts guarantees that need in full a condition failing in D-AGENT (seven of eight) but gives no such count for T-AGENT. By the same rule it is computable from the tables. The asymmetry leaves 'fit best' without its number.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Add a computed fact in 100_analysis/analyze.py (test first, red before green) for the number of works with a guarantee that need in full a condition that fails in T-AGENT, and use it with {{fact:...}} in that bullet."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Abstract",
+  "claim": "We agree ... a shield over actions at inference time, but only for actions that are typed tool calls named by its rules ... One guarantee survives deployment now: that shield, for the properties that its rules name over typed tool calls",
+  "problem": "Two adjacent sentences state the same limit.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Merge or shorten so the typed-tool-call limit is stated once."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-2",
+  "where": "Section 7, For agent builders",
+  "claim": "When no action is certified safe, halt and ask a human instead of acting.",
+  "problem": "The advice assumes halting is safe; Section 5 calls that 'our own hypothesis'. A halt in the middle of a multi-step operation can be unsafe.",
+  "evidence": "300_render/out/paper.tex (see where)",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Add a short qualification: where halting is itself safe, or after reaching a safe point."
+ }
+]

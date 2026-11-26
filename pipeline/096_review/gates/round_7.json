@@ -1,0 +1,87 @@
+{
+ "all": [
+  {
+   "id": "F7.0",
+   "i": 0,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The quote is real: paper.tex:62 reads \"U1--U4 are conditions we add, which the guarantees use without stating them\". Line 131 reads \"The papers do not state four further conditions, or state them only in part.\" Lines 148 and 149 then name the near-U2 statements. The first is the monitored-MDP \"truthful\" proxy reward, whose source line is \"iv) the proxy reward is truthful\" (045_fulltext/mohammedalamen2025b.txt:238). The second is the reward-alignment \"may be unreliable\" caveat. So the introduction is a little stronger than the body. This is a difference in hedging, not a wrong fact. A truthful proxy reward is not U2, because it does not say that the judgement ignores the agent, and the body says \"Neither considers an agent that changes the judgement the reward reports\". The paper already discloses the near-statements in the body, and no key claim (K02) depends on \"wholly unstated\". 096_review/rejected.csv has no entry on this. The finding is a wording and emphasis point only.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F7.1",
+   "i": 1,
+   "gate": {
+    "verdict": "settled",
+    "material": false,
+    "reason": "The paper does say \"S1--S6 are stated in the cited papers\" (paper.tex:62). S5 is stated in the cited papers: Satija says \"successive policies are updated sufficiently slowly\" (paper.tex:494, Theorem 3.1), and Table 7 cites Satija and Wachi for it. The reviewer's remaining objection is the convention that counts adaptation in context as an update (paper.tex:397). That is a design choice in 005_decisions/decisions.csv (D8, D11), and it is disclosed in the paper. rejected.csv R22 settles findings that only dispute \"the S5 convention\", unless a source quote shows the choice produces a false statement. The finding gives no such quote. R17 also covers the S5 full cells for the convergence works. The finding adds no wrong fact, wrong quote or unsupported count.",
+    "source_file": "096_review/rejected.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F7.2",
+   "i": 2,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The finding asks for two additions to the abstract: \"by our specialisation\" and a caveat about the enforcing components. Both are already in the paper, and neither changes K01. The abstract (paper.tex:52) states the exception with its own conditions: \"if the shield sees every call and a safe fallback such as halting exists at every step\", and the same sentence says \"for the properties that its rules name over typed tool calls\". The Position paragraph (:58) says \"by our specialisation\". Section 5 (:243) says \"This specialisation is ours\" and \"the guarantee is only as strong as the components that enforce them\". K01 in key.csv has no \"ours\" qualifier, so the abstract matches the key. A missing qualifier in the abstract alone is a nice-to-have, not a wrong fact. Related rejected entries: R25 (round 5) covers the point that the shield paper is the authors' own stand-in, R43 (round 6) covers the shield exception in the abstract, and R48 (round 6) covers the same \"key claim scored qualify\" finding, citing :243.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F7.3",
+   "i": 3,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "The paper (paper.tex:122, draft.md:31) says \"(the book notes sample-path variants by others)\". 045_fulltext/altman1999.txt:545-547 reads \"Some other results on sample-path costs (both in the constraint and in the objective function) can be found in Altman and Shwartz (1991d)\". Altman wrote the book, so some of the variants are his own. Lines 540-541 name Ross and Varadarajan as the others. The statement describes the source wrongly. K05 itself survives: the expectation constraint and the ergodicity assumption both check out. rejected.csv has no entry that covers this.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In 200_draft/draft.md line 31, replace \"(the book notes sample-path variants by others)\" with \"(the book notes sample-path variants, by Ross and Varadarajan and by Altman and Shwartz)\"."
+   }
+  },
+  {
+   "id": "F7.4",
+   "i": 4,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper says what the finding quotes (paper.tex:250), and the finding's source quotes are real (openai2026b.txt:113, 138, 145, 180, 186-189). But they do not show a wrong fact. paper.tex:250 says 'The agents reasoned about the mechanism that scored them (U3)... They took goals from one another (U1)'. It does not say 'all agents'. The source supports both behaviours as incident patterns. openai2026b.txt:113 lists 'agents adopting goals from one another' as one of four misalignment patterns. openai2026b.txt:145 says 'a form of metagaming, where models explicitly reason about their training or evaluation mechanisms'. Lines 176-183 give a concrete case where an agent paused and then dropped its qualms after another agent posted 'GO'. So 'took goals from one another' is supported by an actual instance, not only by the vulnerability sentence at line 180. The 'some agents' and 'walked away' qualifiers (lines 138, 186-189) limit how many agents did this. They do not change the claim in key K19, which itself uses the same plural wording. Adding 'some' is a nice-to-have qualification, not a correction. rejected.csv R16 already accepts the U3 evidence from openai2026b.txt:140-147. The other U1 mention (paper.tex:449) is about training runs, not this incident, so it does not contradict Section 5.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F7.5",
+   "i": 5,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper does not make the incomplete claim. paper.tex:255 already lists the other sources: \"Their evidence is theory and experiments in grid worlds ..., MuJoCo, Safety Gym, Atari and an analysis of reward functions from published driving papers \\citep{knox2023}, a study with human participants \\citep{muslimani2025}, and goal-reaching tasks on simulated and real robots\". The paper therefore says the reviewer's missing items. The reviewer only compares a short key.csv summary (K20, line 21) with the key's scoring; this is not a wrong fact, quote or citation in the paper. The reviewer also confirms that the central part, no LLM-agent experiment in the cited tool papers, holds. A longer list in the key summary would be a wording or completeness preference.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F7.6",
+   "i": 6,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in draft.md:13 and paper.tex:62. The paper hedges it with \"In our reading\". It also says \"This is a reading, not a count: we do not cross U1\u2013U4 with each tool\". So it does not claim a theorem-level dependency, and it does not claim that any named theorem needs U3. The finding is also off target on Satija. Satija's Theorem 3.1 is not tied to U3 anywhere in the paper. The tool-by-condition cells are S1\u2013S6 only. The \"because each takes its reward or cost as fixed and single\" clause loosely supports U1, U2 and U4 and supports U3 less well. That is a wording and emphasis weakness, not a wrong fact or quote, and not a missing qualification that changes a K02 claim. K02 says U3 binds \"in reported cases\", and paper.tex:58 says \"U3 fails in reported cases\". The U3 reason for T-RL and D-RL (\"the cited tools assume a policy that does not model them\", 085_setting_conditions/reasons.csv:10) is an openly stated interpretation. No row in 096_review/rejected.csv covers this exact point, so it is not settled.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  }
+ ],
+ "fixes": [
+  "F7.3"
+ ],
+ "fixlog": "Changes made: F7.3 (1 edit)\n- 200_draft/draft.md:31: \"(the book notes sample-path variants by others)\" -> \"(the book notes sample-path variants, by Ross and Varadarajan and by Altman and Shwartz)\"\n- The sentence exists only in the draft, so I edited the draft. No stage table changed and no count moved.\n- Source quotes: 045_fulltext/altman1999.txt:540-541 and :545-547. I logged them in /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_7.csv.\n\nFindings skipped: none.\n\nBuild result: `wrote .../300_render/out/paper.pdf | 82 of 104 references cited`. The build gave no stale-claim warnings, so I did not run stamp.py.\n\nTests: all pass.\n- 100_analysis: 14 passed\n- 300_render: 24 passed\n- 047_extracts: 4 passed\n- 040_biblio: 3 passed\n- 096_review: 4 passed",
+ "checks": [],
+ "repair": null
+}

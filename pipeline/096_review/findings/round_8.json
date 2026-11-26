@@ -1,0 +1,35 @@
+[
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K07",
+  "problem": "key claim scored qualify",
+  "evidence": "Paper.tex:124 says of Wachi et al.: 'The guarantee of \\citet{wachi2023} depends only on executing actions from the certified safe set; the reward learner can be any RL algorithm.' The source does not support 'only'. wachi2023.txt:332-336: 'the action space is augmented so that the agent can execute the emergency stop action ... The second modification concerns the reward function', and wachi2023.txt:405: 'Theorem 4.1. Under Assumption 3.4, MASE guarantees safety'. The theorem therefore also needs the added stop action and a valid delta-quantifier (Assumption 3.4, stated for all (s,a)). The quantifier is built from cost data gathered by the learner while it acts. The paper concedes the data need and doubts the frozen case two sentences later, but the 'only' sentence is stronger than the theorem. The other parts hold: alshiekh2018.txt:625-630 ('works even if the learning algorithm is already in the execution phase and therefore follows a fixed policy ... does not even need to know that it is shielded') is stated for post-posed shielding only.",
+  "severity": "overclaim",
+  "key": "K07",
+  "fix": "Replace 'depends only on executing actions from the certified safe set' with 'depends on executing only actions from the certified safe set, on an added stop action, and on a valid uncertainty quantifier (Assumption 3.4), which needs cost data gathered while acting'. Optionally write 'is stated, not tested' for the frozen-policy claim about post-posed shielding."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K11",
+  "problem": "key claim scored qualify",
+  "evidence": "Checked: paper.tex:203-218 matches 085_setting_conditions/cells.csv cell for cell. 065 cells give seven of eight guaranteed works at least one full cell on a D-AGENT-failing condition (altman S2/S4, satija S4/S5/S6, wachi S4/S6, mohammedalamen2025a S2/S3/S4, mohammedalamen2025b S4/S5/S6, kaelbling S2/S3, tse S4/S5). The quotes in reasons.csv exist in the full texts (openai2026b, openai2026c:342-343, 436, 957-958, baker2025, wallace2024). Counts match facts.json. One cell is not borne out as worded: U1,T-AGENT is a check mark (085_setting_conditions/cells.csv:47). Its reason (085_setting_conditions/reasons.csv:8) says 'agents in one lab's training runs shared information through a message board [@openai2026c], but no report shows that this changed their objective.' The lab's account says the opposite about training and evaluation rollouts: 045_fulltext/openai2026b.txt:113 'We identified four misalignment patterns that contributed to the models' behavior : reward hacking, persistence on seemingly impossible tasks, unauthorized communication, and agents adopting goals from one another.' (preceded by 'To understand these, we analyzed model training and evaluation rollouts'). The paper itself uses this finding as a U1 failure at paper.tex:250: 'They took goals from one another (U1)'. The worked example (openai2026b.txt:181-184, 'another agent then wrote GO on the message board') is from the evaluation incident, so training-time goal adoption is not shown either way. The cell should be ~, or the reason should say the report names goal adoption across training and evaluation but gives no training example. This does not change K09 or K10 counts (T-AGENT still fails only S3).",
+  "severity": "overclaim",
+  "key": "K11",
+  "fix": "Grade U1,T-AGENT as ~ (holds in usual runs, fails in reported cases), or reword the U1 reason to cite openai2026b.txt:113 and say the training-time evidence for goal adoption is not separated from the evaluation incident."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K20",
+  "problem": "key claim scored qualify",
+  "evidence": "Part 1 holds. I grepped all 14 cited tool papers in 045_fulltext for LLM, language model, GPT, Llama and NetHack and found no LLM-agent experiment. Muslimani:197 mentions 'LLM alignment' only in related work, and Vasan:118 mentions vision-language models only in related work. Part 2 is worded as a complete list ('their evidence comes from grid worlds, MuJoCo, Safety Gym, Atari and real-robot goal-reaching'), but the sources report other evidence. alshiekh2018.txt:904-905: 'We applied shielded reinforcement learning in four domains: (1) a robot in 9x9 and 15x9 grid worlds, (2) a self-driving car scenario, (3) an Atari R game called Seaquest'. mohammedalamen2025a.txt:179: 'advances to a gridworld driving task ... the previously described MNIST example' (image classification). lee2025.txt:437 uses Gymnasium-Robotics simulated goal-reaching. muslimani2025 is a human-participant study and knox2023 an analysis of published reward functions; paper.tex:255 lists those two but K20 omits them. paper.tex:255 omits the car scenario and MNIST, and the Alshiekh domains are not covered by the list there.",
+  "severity": "overclaim",
+  "key": "K20",
+  "fix": "Reword K20 and the paper's evidence list to 'grid worlds, simulated driving, MNIST, MuJoCo, Safety Gym, Atari, simulated and real robot goal-reaching, a human-participant study and an analysis of published reward functions'. Or say 'e.g.' / 'mainly' instead of presenting the list as complete. The 'no LLM-agent experiment' part can stay unchanged."
+ }
+]

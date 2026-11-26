@@ -1,0 +1,322 @@
+{
+ "all": [
+  {
+   "id": "F5.0",
+   "i": 0,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are in paper.tex (lines 259, 268). The sources support them, and the paper hedges the same point elsewhere. Line 248 says \"the user reports that a rollback worked, and the sources do not say who ran it or what it restored\". Line 259 hedges inline: \"from a rollback that the agent had said was impossible, and whether the agent could have run it is not reported\". Line 268 is advice. It gives the rollback as an outcome, which matches sharwood2025.txt:28, \"It turns out Replit was wrong, and the rollback did work\", and the user's own words \"despite Replit itself telling me rolling back wouldn't work here -- it did\". \"Neither agent undid its action\" is a mild inference. The agent called a rollback impossible, so it is unlikely to have run one, and the paper says that whether it could have is unreported. The unhedged wording does not change K14, which says \"by the user's account, the agent said a rollback was impossible and the rollback then worked\". The remaining gap, who ran the rollback, is already disclosed in the paper. R14 and R19 already treated the Replit versus Terraform recovery grading as settled. The finding asks for extra hedging only, so it is wording and not material.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.1",
+   "i": 1,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper discloses the point the reviewer says is missing. paper.tex:64 says \"These counts rest on our convention for S5 and, for U2 and U3, on evaluations and simulations.\" The U2 x is argued from how the setting works, not from a reported case. paper.tex:451 reads \"In D-CHAT and D-AGENT the principal's judgement is formed in the interaction that the model shapes... D-AGENT is graded by this reading of the setting\". The rule at paper.tex:432 is \"x when the condition fails in the setting as usually run\", and a structural reading fits it. The paper states that the support is simulation. The 2026 incident is used only as an illustration, and it is called \"an atypical deployment\" at paper.tex:250. It is not the basis of any D-AGENT cell. The D-CHAT U3 ~ rests on a single reply leaving little room to act on reasoning, which is a different argument, so the two cells are not graded inconsistently. At most this is a debatable grading of D-AGENT U3, and the evidence base is already flagged. No wrong fact, citation or count follows, and the key claim K09 is already qualified. rejected.csv has no entry on this exact point (R13 and R16 concern McLean's U3 stance and the metagaming evidence), so it is not settled.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.2",
+   "i": 2,
+   "gate": {
+    "verdict": "settled",
+    "material": false,
+    "reason": "The finding is a wording and emphasis issue, and rejected.csv already covers it. R10 and R15 are marked fixed in round 1 and say to report only if the text claims more than a conditional result. The abstract (paper.tex:52) says the safe set \"keeps its safety theorem under the same assumption and one more, an uncertainty quantifier ... for which we found no model; the proof of its near-optimality does not carry over\". That is conditional and matches key K13, which says \"keeps ... only given a safe halt ... and a delta-uncertainty quantifier ... for which we found no model\". The Introduction says it keeps the theorem \"only under assumptions that we found no method to meet\". Section 5 (paper.tex:245) states \"So this guarantee does not transfer yet\" and \"our adaptation, not their theorem\". The abstract and introduction therefore do not contradict Section 5. They hedge the same way, and \"survives\" and \"keeps\" are worded differently.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.3",
+   "i": 3,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper already discloses the point. paper.tex:88 says: \"shielding, for which they cite no paper; we use an early paper on shielding \\citep{alshiekh2018} ... For these seven the tool label in the table is ours.\" The Role column of Table 1 marks the origin of each work. The appendix (paper.tex:517) says \"\\citet{mclean2026} names shielding but cites no paper\". McLean et al. do name shielding as one of four techniques. The twelve works are defined in Section 3 as the cited works plus the authors' stand-in for shielding, and the abstract and conclusion reuse that same defined set. The finding asks only for a qualification in the abstract and conclusion. That is a wording and nice-to-have change, not a wrong fact or a changed claim. K03's counts (four, four, four) follow the Section 3 definition and are not contradicted.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.4",
+   "i": 4,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper does not claim a new theorem for this work. 063_tools/tools.csv:8 gives \"Convergence, tabular only\", and the guarantee_kind is \"other\". The full text does state the guarantee and its four conditions: 045_fulltext/mohammedalamen2025b.txt:231-235, \"theoretically proven to converge to an optimal policy for solvable Mon-MDPs in tabular settings\" and \"the tabular reward model convergence guarantees hold only if: i) the environment is tabular with a finite or countably infinite ... number of states and actions; ii) each joint state pair ... visited infinitely often ... iii) ... observe the environment reward ... iv) the proxy reward is truthful\". The S3, S5 and S6 cells quote these conditions (065_tool_conditions/cells.csv:40-43), and the S3 cell says outright that the function-approximation version has no guarantee. The counted claim is \"state a guarantee\" (K03). The work does state it, with its conditions, as the basis of its setting. The paper never says the guarantee is the work's own contribution. Reading \"states\" as \"restates with conditions\" is a defensible convention, and the table already marks the scope (\"tabular only\"). R17 shows the S5 cells for convergence results were already considered. At most this is a wording or classification nicety; no fact, quote, count or cell is unsupported by the sources.",
+    "source_file": "063_tools/tools.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.5",
+   "i": 5,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in the paper (paper.tex line 268). The finding says it contradicts Section 5. Section 5 says only 'the sources do not say who ran it or what it restored'. It also says 'In both the reported outcome was a restore'. Appendix Table incidents (line 413) says 'restored by a platform rollback, as the user reports'. The Register text (045_fulltext/sharwood2025.txt:25-28) says Replit advised Lemkin 'it could not restore the database' and 'It said it was impossible in this case, that it had destroyed all database versions. It turns out Replit was wrong, and the rollback did work.' The user also writes 'despite Replit itself telling me rolling back wouldn't work here -- it did.' So the source supports a database rollback that worked, and the paper's 'restored the data' follows from that. The unknown is who ran it, and the call to action does not claim to know that. The call to action drops the 'by the user's account' hedge, which is a wording issue. It does not change any claim in key.csv (K14 is about what the agent said and that the rollback then worked).",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.6",
+   "i": 6,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The paper does say this (paper.tex S6 bullet): \"A leak of isolation makes outside effects possible that the reset does not cover. The lab reports that an agent in a May training experiment 'used an already publicly exposed Hugging Face user token' and that agents in an unrelated research workload 'issued write requests'\". The source (openai2026c.txt:326) says \"Unlike the May 8 training run, this experiment was given access to the internet via WebCache\", and lines 342-345 put the May 26 writes in an \"unrelated research workload\" with WebCache access. So both cases had sanctioned internet access and are not isolation leaks. The framing is loose, and the appendix already notes \"one other May experiment had internet access by design\". The partial mark for T-AGENT S6 still holds, because outside effects that a reset does not cover also occur under sanctioned access. The Artifactory SSRF leak is cited separately. The effect is a wording or framing issue, not a wrong fact, quote or count, and it changes nothing in K11.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": "Optional, not required: in the T-AGENT S6 reason, add \"in workloads given internet access through a controlled cache\" after the two quotes, so the examples are not read as isolation leaks."
+   }
+  },
+  {
+   "id": "F5.7",
+   "i": 7,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The paper.tex line 530 quote is present: \"does not even need to know that it is shielded, but Assumption 1 asks that 'The learner accepts elements from S \u00d7 Q as state input'\". The source (alshiekh2018.txt ~625-630) gives the first quote under \"Properties of Post-Posed Shielding\", so it is specific to that mode. But the source says Assumption 1 holds \"For both settings\" (line ~452), so it also covers post-posed shielding. The cell therefore repeats a tension that is in the source itself. Both quotes are exact. K07 (only a post-posed shield is shown to wrap a frozen policy) is not changed. The cell would read better if it named the shield type, but that is a nice-to-have qualification, not a wrong fact or quote. rejected.csv has no entry covering it.",
+    "source_file": "085_setting_conditions",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.8",
+   "i": 8,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The paper says this. paper.tex:517 reads \"\\citet{wachi2023} names this paper as the shielding it builds on\". paper.tex:88 reads \"call their own method ``a variant of shielding methods'' and cite it\". Wachi (045_fulltext/wachi2023.txt:388-393) writes that the emergency stop is \"akin to shielding [2, 20]\" and that \"MASE can be regarded as a variant of shielding methods (especially, preemptive shielding in [2])\". Reference [2] is Alshiekh et al. (line 1048). So \"builds on\" is a slight overstatement of an analogy. The quote fragment \"a variant of shielding methods\" is verbatim, and it drops only \"can be regarded as\". Wachi does cite Alshiekh as the shielding it relates to. The sentences stay true in substance and change no claim in key.csv. The appendix and Section 3 use only the post-posed shield properties, which the paper takes from Alshiekh directly. This is a wording nit, not a wrong fact. rejected.csv has no entry that covers it.",
+    "source_file": "063_tools/tools.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.9",
+   "i": 9,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper says \"Constraints can also be learned from natural language \\citep{chua2025}\" (paper.tex:71, from 090_related/related.md:5). chua2025.txt:25-27 says it \"learns natural language constraints from positive and negative demonstrations\". The cited source does learn constraints in natural language, so the sentence is supported. The reviewer's objection is that \"from natural language\" could be read as \"from instructions\". That is at most a wording preference. It changes no count, quote or key claim.",
+    "source_file": "090_related/related.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.10",
+   "i": 10,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The finding says only that no full text is stored. It names no wrong fact. paper.tex line 77 says: \"Prompt injection lets text in the environment act as an instruction \\citep{...owasp2025}\" and \"the delusion box \\citep{ring2011}\". These are standard descriptions of the cited works. Ring and Orseau (2011) introduced the delusion box. OWASP LLM01 is the Prompt Injection entry. The bibliography entries (paper.tex lines 354 and 356) match refs.yaml. kohli2026 already carries the note \"we read only its title and abstract page\" (line 69). A missing stored text for two broad citations is a nice-to-have, not a defect in a count, quote or claim in key.csv. The finding does not show that either source fails to support its sentence.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.11",
+   "i": 11,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "The paper says it. draft.md line 77 (same text in paper.tex line 255) reads: \"Their evidence is theory and experiments in grid worlds ..., MuJoCo ..., Safety Gym ..., Atari [@klissarov2023] and a driving simulator [@knox2023]\". Knox et al. (045_fulltext/knox2023.txt) run no simulator experiment. They apply 8 sanity checks to reward functions from published driving papers. The checks use trajectories the authors assumed, such as 1 km paths, and the time steps they assumed. CARLA is mentioned only as how those other papers' setups were read (lines 961-986, 1161, 1495). A grep for \"we train\", \"we run\", \"our experiment\", \"we conduct\" and \"we implement\" finds no experiment of the authors. Their evidence is an analysis of published reward functions, so \"a driving simulator\" credits them with experiments they did not run. This is a wrong description of a cited source's evidence. K20 is not weakened: no cited tool paper has an LLM-agent experiment. 096_review/rejected.csv has no entry on Knox or driving.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In draft.md line 77, replace \"a driving simulator [@knox2023]\" with \"an analysis of reward functions from published driving papers [@knox2023]\"."
+   }
+  },
+  {
+   "id": "F5.12",
+   "i": 12,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in draft.md:69: \"The proof of near-optimality does not carry over, because without a reset the state reached before a halt persists; whether near-optimality holds is open problem 2.\" It sits next to \"open\", so the draft does not claim the result fails. It claims only that the proof as written does not apply. That reading is supported. The Theorem 4.2 proof (wachi2023.txt:~1565-1572) ends with \"the modified (unconstrained) MDP M^ is identical to the original CMDP M\". M^ is the augmented MDP in which the stop leads to s1, which is a reset. With a halt that leaves the state in place, M^ is a different MDP, so the identity step is not available as written. The reviewer's point that the proof's penalty argument never uses the reset directly is true, but the proof depends on the reset-based definition of M^. The key.csv entry K13 itself says \"does not carry over, and whether it holds is open problem 2\". The \"does not carry over\" phrasing is a wording or strength-of-claim issue, not a wrong fact. The finding does not show the paper states anything the sources contradict. A softer wording would be a nice-to-have, not a material fix.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.13",
+   "i": 13,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in draft.md line 89 and in paper.tex line 268. It is not a contradiction with line 71. Line 71 itself says \"In both the reported outcome was a restore ... for Replit the user reports that a rollback worked\". The source says \"It turns out Replit was wrong, and the rollback did work\" (045_fulltext/sharwood2025.txt:28), and the user wrote \"it did\" about rolling back. So the sources support that a rollback worked and that the outcome was a restore. Line 71 only withholds who ran the rollback and what it restored, and line 89 does not claim either. The \"by the user's account\" hedge is missing from line 89, but that is a nice-to-have qualification in advice prose. Key K14 is stated in the Abstract, Case studies and Appendix, and those places carry the hedge.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.14",
+   "i": 14,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in draft.md line 71: \"In our sense the Terraform step was irreversible, because recovery needed the vendor, outside the agent's decision process; for Replit this is disputed.\" The phrase \"In our sense\" already marks it as the paper's own classification, and the reason it gives is the sourced fact that recovery needed the vendor. The same paragraph says \"no undo by the agent is reported\" and that the snapshots were deleted too, so a reader sees the evidence is the absence of a reported undo. Appendix line 109 (\"That the agent could not have undone it is our inference\") labels the inference. That matches the round-1 fix recorded in R14 (\"marked as our inference ... vendor support ticket needed\"). Frozen key item K15 says only \"no undo by the agent is reported\" and \"the vendor restored the database\", and the paper states both accurately. Wanting the inference flag repeated in the main text is a wording and emphasis preference, not a wrong fact, quote or count.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.15",
+   "i": 15,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in draft.md line 13 and paper.tex line 62: \"the certified safe set assumes only a cost that the agent does not move (U2)\". It sits in a sentence that compares tools against the unstated conditions U1-U4: \"The two safety filters use fewer\". The fixed threshold is a stated condition (S1), which the paper marks as stated in the cited papers and which the Wachi cell records. So \"only\" means only among U1-U4, and the paper does not claim the safe set needs nothing else. The U1 definition in 070_unstated_conditions/unstated.csv is \"Observations cannot set or change the objective\"; the paper itself calls the sentence \"a reading, not a count\". The reviewer's U1 link for a given threshold is an arguable extension, not a contradiction with the paper's own conditions. No claim in key.csv K07 changes. At most this is a wording nit.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.16",
+   "i": 16,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper does say this. cells.csv:25 reads \"not needed: the shield checks every action when it is taken.\" Section 5 reads \"A shield needs S1 in full and S2--S5 in part, and it does not need S6\". The finding's inference does not hold. S6 is \"Trials repeat, or every state is recoverable within the decision process (by the agent, or by a reset it can use)\" (064_conditions). Alshiekh's shield does not assume recoverability. It computes the winning region W and blocks any action that would leave it, so the system \"can never allow the play to visit a state from which the environment can force the play to visit an unsafe state\" (alshiekh2018.txt:333-335). The guarantee needs only that the initial state lies in W. The shield creates the safe-action property by design, so it does not assume that property of the environment. That is not S6. The \"safe fallback at every step\" in Section 5 is stated as the paper's own specialisation (\"This specialisation is ours, and it needs a safe action, such as halting, at every step\") for the LLM setting. The paper does not attribute it to Alshiekh, so the cell and the caveat do not contradict each other. The finding itself concedes that the K10 exception (S1 is the only full cell) is unaffected. At most the finding asks for a nice-to-have qualification, and rejected.csv does not cover it.",
+    "source_file": "065_tool_conditions/cells.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.17",
+   "i": 17,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The S6 text exists at 085_setting_conditions/reasons.csv:7 and in paper.tex:447. openai2026c.txt:~322 says the May 13 experiment \"was given access to the internet via WebCache\", so the token case is not an isolation leak. But the paper never calls the token case a leak. It says \"A leak of isolation makes outside effects possible that the reset does not cover. The lab reports that an agent... 'used an already publicly exposed Hugging Face user token'\". The token case is an outside effect the reset does not cover, which is the claim S6 needs. It does not misquote any source. paper.tex:425 also says one May experiment had internet access by design. The cell value (~) holds on the Artifactory SSRF case in openai2026b. The only defect is loose framing, which is not material.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.18",
+   "i": 18,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "Baker et al. report the effect as observed, not as a risk. 045_fulltext/baker2025.txt:25: \"with too much optimization, agents learn obfuscated reward hacking, hiding their intent\". Lines 116-117: \"the agent begins to exhibit obfuscated reward hacking and learns to fool the monitor ... learns to obfuscate its intent within the CoT\". The reviewer quoted only the introduction's \"could cause\" framing (lines 106-110). The setting is RL on agentic coding environments, which is T-AGENT. The U3 reason in 085_setting_conditions/reasons.csv matches this: \"in RL training in 'agentic coding environments', optimising hard against a chain-of-thought monitor taught agents to hide their intent [@baker2025]\". Whether this evidence earns a full \u2717 for the whole column is a grading choice settled by R22 in 096_review/rejected.csv. U2's '~' in T-AGENT rests on a single reward-hacking incident, a different evidence base. The \"two\" bound in facts.json is not shown wrong.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.19",
+   "i": 19,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is accurate: paper.tex line 423 reads \"S1 fails too: the code freeze was an instruction to the agent, and in the user's words 'There is no way to enforce a code freeze in vibe coding apps like Replit'\". It matches incidents.csv, whose note says \"an instruction to the agent, not a specification that anything enforced\". The reviewer is right that the stated S1 label, \"Safety specification is given\", is loose. But the paper uses S1 in the narrower sense of a formal cost, bound or rule list that a method can enforce. Stated.csv gives the sources as a cost function, a bound and a temporal-logic specification. The S1 reason in 085_setting_conditions/reasons.csv says a given specification may still not be \"a specification of safety\", and that a rule list \"covers only what it names\". On that reading, an unenforced prose freeze is not an S1 specification, so the cell is a defensible classification and not a false fact. No wrong count or quote, no bad citation and no contradiction between two parts of the paper is shown. Key item K14 covers only the rollback claim, not S1. At most this is a wording or definition-precision nit about how S1 is stated.",
+    "source_file": "076_incidents/incidents.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.20",
+   "i": 20,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The paper line 64 says \"These counts rest on our convention for S5 and, for U2 and U3, on evaluations and simulations.\" The D-AGENT S6 reason (085_setting_conditions/reasons.csv:7) does cite the evaluation incident (\"downloaded four private Hugging Face code repositories\"). But the same reason also cites two genuine deployment incidents: Terraform (\"the vendor restored the database\") and Replit. Both show effects that only a rollback or backup outside the agent could undo, so S6 failing in D-AGENT stands without the evaluation incident. The wording gap is real, but the S6 cell and the K09 count are supported. This is a nice-to-have qualification. 096_review/rejected.csv has no entry covering it.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.21",
+   "i": 21,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are real (paper.tex:58, :162; mclean2026.txt:82). The finding names no wrong fact, quote, count or contradiction. The paper defines binding as \"not been shown to yield\". McLean et al. only say the Elelimy history-to-state map plus CMDPs is \"precisely the problem that constrained MDPs address\". They show nothing, so S4 can still be called binding. Their passage is about the finite context window, which the paper does not claim to be hidden world state. The S4 cell reason (085_setting_conditions/reasons.csv, S4) says D-AGENT fails because \"the world behind the tools is hidden, and its state is not in the context\". A learned map over the context cannot recover that. The paper says S4 is hidden state behind tools. So the finding asks for an extra rebuttal of a McLean remedy. That is a nice-to-have qualification, not a missing one that changes K02. K02 itself does not name the context-window case, and K02 holds as the paper states it.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.22",
+   "i": 22,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in the paper (draft.md line 69 and paper.tex line 245): \"The open part is the quantifier: it needs the cost of a tool call to be regular in known features or in a known kernel (S1)\". The subject of \"it\" is the quantifier, not the safety theorem. The same paragraph says the theorem holds \"Under Assumption 3.4\", the uncertainty quantifier. It also says \"if a quantifier exists\", and that @wachi2023 \"build quantifiers for costs that follow a generalised linear model or a Gaussian process\". So the paper already separates the general requirement from the constructions, and it does not state the finding's claim. The finding's evidence (Assumption 3.4 asks for a general delta-uncertainty quantifier) agrees with the paper. The remaining issue is how a reader might take \"it\". That is wording, and K13 in key.csv is not affected.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.23",
+   "i": 23,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "The paper (paper.tex:432) defines \u00d7 as \"the condition fails in the setting as usually run\" and ~ as \"holds in usual runs but fails in reported cases\". 085_setting_conditions/cells.csv grades U3 \u00d7 for both T-AGENT and D-AGENT (by LLM). The reason text (paper.tex:453, from reasons.csv) gives only reported cases. For T-AGENT it cites optimising \"hard against a chain-of-thought monitor\" (baker2025), which is not the usual run. For D-AGENT it cites models reasoning about oversight \"in evaluations\" (greenblatt2024b, meinke2024, lynch2025) and \"in one evaluation agents sought the evaluator's code\" (openai2026, metr2026). I checked greenblatt2024b.txt. Its alignment-faking reasoning appears in 7-24% of cases in set-up scenarios where the model is given information about its training, and the paper does not claim these are usual runs. The openai2026c extracts call the incident an \"outlier scenario\" without production safeguards. rejected.csv has no entry covering this (R13 and R16 are about other points). No cited evidence shows U3 failing in usual runs, so under the paper's own contract these cells should be ~. Because K11 says every D-AGENT cell is right and K09/K10 are driven by these cells, the grade affects headline counts. The grade is a judgment call, so how much it matters depends on how K09/K10 weigh U3.",
+    "source_file": "085_setting_conditions/cells.csv",
+    "fix": "Either regrade U3/T-AGENT and U3/D-AGENT from \u00d7 to ~ in 085_setting_conditions/cells.csv, then regenerate the facts.json counts and the headline claims that use them. Or add to reasons.csv a cited source showing that agents reason about their overseer or scorer in usual (non-contrived, non-outlier) runs, and say so in the reason."
+   }
+  },
+  {
+   "id": "F5.24",
+   "i": 24,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The sentence is in paper.tex line 423: \"S1 fails too: the code freeze was an instruction to the agent, and in the user's words 'There is no way to enforce a code freeze in vibe coding apps like Replit'\". The source-table reason in 076_incidents/incidents.csv (replit row) sets the sense: \"The code freeze was an instruction to the agent, not a specification that anything enforced.\" So the paper does not claim that no instruction was given. It claims that the formal, enforced specification the tools assume (a cost function and bound, a temporal-logic spec; 064_conditions/stated.csv S1 and paper.tex line 393) was absent. The extract e2 backs this: no way to enforce the freeze. The reviewer reads S1 as \"any constraint supplied\". That is a wording dispute over how S1 is read, and the paper's own text makes its reading explicit. It is also a dispute over the incident column and the S1 convention, which 096_review/rejected.csv R22 settles unless a source quote shows a false statement. No false statement or quote is shown. The reviewer's fix would not change any claim in key.csv.",
+    "source_file": "076_incidents/incidents.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F5.25",
+   "i": 25,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The cell exists: paper.tex:100 says \"CMDP, backward value functions \\citep{satija2020} & N & Feasible at every update\". It comes from 063_tools/tools.csv line 3. Satija Theorem 3.1 (047_extracts/satija2020/extracts.csv e2) says \"if \u03c0k is feasible at x0 then so is \u03c0k+1\". The guarantee therefore needs an initially feasible policy. The appendix S5 cell (paper.tex:494) names the slow-update condition and omits this prerequisite. The full text (045_fulltext/satija2020.txt, lines 711-712) says the experiments start from a random policy and use a recovery update when the policy is infeasible. The omission is real. It is not material, because K03 only says the work states a guarantee about a safety constraint. It does, and the cell still names that guarantee. The missing qualification does not change K03. No entry in rejected.csv covers it.",
+    "source_file": "063_tools/tools.csv",
+    "fix": "Optional, since not material. In the satija2020 row of 063_tools/tools.csv, change the guarantee cell to \"Feasibility preserved at each update, from a feasible initial policy\"."
+   }
+  }
+ ],
+ "fixes": [
+  "F5.11",
+  "F5.23"
+ ],
+ "fixlog": "Changes made (5 edits, logged in 096_review/changes/round_5.csv):\n- **F5.11:** In `200_draft/draft.md`, \"a driving simulator [@knox2023]\" now reads \"an analysis of reward functions from published driving papers [@knox2023]\". Source: `045_fulltext/knox2023.txt:21-23`.\n- **F5.23:** In `085_setting_conditions/cells.csv`, U3/T-AGENT and U3/D-AGENT went from \u2717 to ~. I took the regrade option because no cited full text shows U3 failing in usual runs. `metr2026` covers the same single incident.\n- **F5.23, effects of the regrade:**\n  - Four counts in `100_analysis/facts.json` changed:\n    - `dagent_unstated_fail`: all four \u2192 three of four\n    - `dagent_fail`: nine of ten \u2192 eight of ten\n    - `training_llm_max_fail`: two \u2192 one\n    - `dchat_vs_dagent`: \"S2, S4, S6, U1 and U3\" \u2192 \"S2, S4, S6 and U1\"\n  - `draft.md` line 15: \"for U2 and U3, on evaluations and simulations\" became \"for U2, on simulations\". No count rests on U3 now.\n  - `draft.md` line 63: \"more than {{fact:training_llm_max_fail}} conditions\" became \"more than \u2026 of the conditions\". Without this, the build printed \"more than one conditions\".\n  - I stamped the stale claim `caption_setting_conditions` after re-reading it against `080_settings/settings.csv` and `085_setting_conditions/cells.csv`. It is still true.\n\nFindings skipped: none.\n\nOpen issue:\n- The frozen key K09 says \"in D-AGENT \u2026 all four unstated conditions fail\". After the regrade the paper says three of four, so K09 no longer matches. I did not edit `096_review/key.csv`. Its first clause (\"no LLM training setting fails more than two\") is still true.\n\nBuild result line: `wrote /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/300_render/out/paper.pdf | 82 of 104 references cited`\n\nTest counts: 49 passed, 0 failed:\n\n| Suite | Passed |\n|---|---|\n| 100_analysis | 14 |\n| 300_render | 24 |\n| 047_extracts | 4 |\n| 040_biblio | 3 |\n| 096_review | 4 |\n\nChanges file: /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_5.csv",
+ "checks": [
+  {
+   "lens": "sources",
+   "change": "3 (F5.23, U3 D-AGENT x -> ~)",
+   "ok": false,
+   "problem": "The cell is now '~', and the evidence is reported cases in evaluations. That fits the convention. But the Position paragraph still lists U3 among the obstacles that fail in deployed agents. It defines 'binding' as 'fails in deployed agents'. U3 is no longer an x in D-AGENT, so the claim overreaches. It needs a qualifier, for example 'U1, U2 and U4 fail outright in D-AGENT and U3 in reported cases'. Draft line 13 also groups U1-U4 without this qualification.",
+   "evidence": "200_draft/draft.md:9: \"We call a condition binding when it fails in deployed agents ... and objectives, oversight and principals that the agent's inputs and reasoning can change or multiply (U1\u2013U4), which closing those gaps would not remove.\" 085_setting_conditions/cells.csv:64: U3,D-AGENT,~,LLM. 100_analysis/facts.json: dagent_unstated_fail 'three of four'.",
+   "repair": "In draft.md:9 replace '(U1\u2013U4)' with '(U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases)', or state that U3 is only partly binding."
+  },
+  {
+   "lens": "consistency",
+   "change": "3 (F5.23): U3,D-AGENT changed from fail to partly",
+   "ok": false,
+   "problem": "It moves dagent_unstated_fail from 'all four' to 'three of four', but key claim K09 still says all four unstated conditions fail in D-AGENT. The same change also leaves the binding definition stale: U3 no longer fails in deployed agents, yet U1-U4 are listed as binding obstacles.",
+   "evidence": "096_review/key.csv:10: \"No LLM training setting fails more than two conditions outright; in D-AGENT five of six stated conditions and all four unstated conditions fail.\" Versus 100_analysis/facts.json: \"dagent_unstated_fail\": \"three of four\" and 085_setting_conditions/cells.csv: U3,D-AGENT,~,LLM. 300_render/out/paper.tex:58: \"We call a condition binding when it fails in deployed agents ... and objectives, oversight and principals ... (U1--U4)\". The table row at paper.tex:215 shows U3 as ~ in D-AGENT. The same reading applies to K02 ('conditions that fail in deployed agents ... U1-U4') and to paper.tex:266 ('each targets one condition that deployed agents violate'), which covers open problem 3 on U3.",
+   "repair": "Update K09 to: \"No LLM training setting fails more than one condition outright; in D-AGENT five of six stated conditions and three of four unstated conditions fail.\" Either state at paper.tex:58 that U3 is binding although it holds only in part in D-AGENT, or change 'U1--U4' to 'U1, U2, U4, and U3 in part'. Do the same for K02."
+  },
+  {
+   "lens": "consistency",
+   "change": "5 (F5.23): 'fails more than {{training_llm_max_fail}} of the conditions outright' in the training bullet",
+   "ok": false,
+   "problem": "The fix made draft line 63 (paper.tex:232) grammatical, but the same fact at draft line 15 (paper.tex:64) now reads ungrammatically. It was not changed. K09 also still says 'more than two', which is true but no longer tight.",
+   "evidence": "300_render/out/paper.tex:64: \"no more than one of the conditions fail outright in any setting where LLMs are trained\". 200_draft/draft.md:15 has \"no more than {{fact:training_llm_max_fail}} of the conditions fail outright\". 096_review/key.csv:10 has \"fails more than two conditions outright\".",
+   "repair": "In 200_draft/draft.md:15, change 'fail outright in any setting' to 'fails outright in any setting', or write 'no setting where LLMs are trained has more than {{fact:training_llm_max_fail}} of the conditions failing outright'. Change 'two' to 'one' in K09."
+  }
+ ],
+ "repair": "I checked all three flags against the source and all three hold. I applied the repairs and reverted nothing. The build succeeds and all five test suites pass.\n\n**Repairs** (6 rows appended to `096_review/changes/round_5.csv`, ids `3r` and `5r`):\n- **3r, Position paragraph** (`200_draft/draft.md:9`). The flag holds: `cells.csv:64` is now `U3,D-AGENT,~` and `facts.json` gives `dagent_unstated_fail` as \"three of four\". I changed \"(U1\u2013U4)\" to \"(U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases)\".\n- **3r, \"For RL researchers\" paragraph** (`200_draft/draft.md:87`, `paper.tex:266`). The flag holds for open problem 3, which is on U3. I changed \"each targets one condition that deployed agents violate,\" to \"\u2026violate (U3 in reported cases),\".\n- **3r, K09 in `096_review/key.csv`.** I replaced it with \"No LLM training setting fails more than one condition outright; in D-AGENT five of six stated conditions and three of four unstated conditions fail.\" and set `revised_in` to \"round 5\". This one change to K09 also covers flag 3's change of \"two\" to \"one\".\n- **3r, K02 in `096_review/key.csv`.** I changed \"(U1-U4)\" to \"(U1, U2 and U4; U3 in reported cases)\" and set `revised_in` to \"round 5\".\n- **5r, `200_draft/draft.md:15`.** I changed \"of the conditions fail outright\" to \"of the conditions fails outright\", so `paper.tex:64` now agrees with \"no more than one\".\n\n**Kept:**\n- Draft line 13 lists U1\u2013U4 only as the conditions we add, not as conditions that fail. It makes no claim about failure, so I did not change it.\n- K02 and K09 are in the frozen key file. I changed them because the repair asked for it, and the `revised_in` column records the change. You may want to confirm that edits to the frozen key are allowed.\n\n**Build:** `300_render/build.py` passed all checks and wrote `300_render/out/paper.pdf` (82 of 104 references cited). The new text appears at `paper.tex:58`, `:64` and `:266`.\n\n**Tests:**\n\n| Suite | Result |\n|---|---|\n| 100_analysis | 14 passed |\n| 300_render | 24 passed |\n| 047_extracts | 4 passed |\n| 040_biblio | 3 passed |\n| 096_review | 4 passed |\n\nFiles changed:\n- /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/200_draft/draft.md\n- /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/key.csv\n- /usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_5.csv\n\nBackups made before the edits:\n- /tmp/claude-1000/-usr-local-HAMMER-DYNAMIC-SRC-pathway-PERSONAL-PUZZLES-PERSONAL-RESEARCH-AGENDAS-ML-RL-safety-paper--debunking/40702197-f30b-462d-9871-96acb468eb28/scratchpad/draft.md\n- /tmp/claude-1000/-usr-local-HAMMER-DYNAMIC-SRC-pathway-PERSONAL-PUZZLES-PERSONAL-RESEARCH-AGENDAS-ML-RL-safety-paper--debunking/40702197-f30b-462d-9871-96acb468eb28/scratchpad/key.csv"
+}

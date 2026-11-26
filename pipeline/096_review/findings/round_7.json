@@ -1,0 +1,79 @@
+[
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "paper.tex:62 (Introduction) against paper.tex:131, :148 and Table 2",
+  "claim": "\"U1--U4 are conditions we add, which the guarantees use without stating them\"",
+  "problem": "The body does not support \"without stating them\". Section 4 says the papers \"do not state four further conditions, or state them only in part\". It then reports that the monitored-MDP guarantees \"require a 'truthful' proxy reward whenever one is shown\". That is a stated condition on the reward judgement, close to U2/U1. The reward-alignment paper also states that its metric \"may be unreliable\" if the stakeholder's preferences are wrong. So the introduction's \"without stating\" is stronger than the body's \"in part\". It makes U1--U4 look wholly unstated, and this carries into the abstract's \"four that they do not state\". The body does not say which of U1--U4 are stated in part, or in which works.",
+  "evidence": "paper.tex:62: \"S1--S6 are stated in the cited papers; U1--U4 are conditions we add, which the guarantees use without stating them\". paper.tex:131: \"The papers do not state four further conditions, or state them only in part.\" paper.tex:148: \"the guarantees require a ``truthful'' proxy reward whenever one is shown \\citep{mohammedalamen2025b}\". 045_fulltext/mohammedalamen2025b.txt: \"iv) the proxy reward is truthful, meaning r\u0302tE = rE or r\u0302tE = \u22a5 \u2200t\". 045_fulltext/muslimani2025.txt: \"if the preferences provided by the human stakeholder do not accurately reflect their true beliefs, the output of the metric may be unreliable\".",
+  "severity": "unclear",
+  "key": "K02",
+  "fix": "In the introduction and abstract, say the papers state U1--U4 only in part or implicitly. Name the works that come near U2 (monitored MDPs, reward alignment)."
+ },
+ {
+  "source": "claude",
+  "lens": "argument",
+  "where": "paper.tex:62, :90 and Appendix Table 7 (paper.tex:393-398 region) against Table 1 S5 column",
+  "claim": "\"S1--S6 are stated in the cited papers\" (S5: designer controls the learner's update)",
+  "problem": "For S5 the sources given in Appendix Table 7 are two works only. One is Satija (\"sufficiently slowly\"). The other is Wachi, and only \"in part, a learner filtered to a certified safe set\". Yet Table 1 marks S5 as needed in full for seven works. The stated condition is also widened by the paper's own convention, \"(we count adaptation in context as an update)\". No cited paper states S5 in that form. So S5 is partly a condition the authors add, not one the papers state. The abstract and K09 count S5 among the \"six conditions stated in the cited papers\" that fail in D-AGENT (five of six). The introduction does disclose that S5 fails \"only by our convention\". It does not disclose that the stated/unstated split is blurred for S5 as well.",
+  "evidence": "paper.tex:62: \"S1--S6 are stated in the cited papers\". Table 7 row S5: \"Updates ``sufficiently slowly'' \\citep{satija2020}; in part, a learner filtered to a certified safe set \\citep{wachi2023}\". Table 1 S5 column: \u2713 for satija2020, mohammedalamen2025b, tse2025, klissarov2023, vasan2024 and lee2025. Appendix cells (paper.tex:476-477), Altman: \"S5, not needed: the policy is computed by linear programming; there is no learner.\"",
+  "severity": "overclaim",
+  "key": "K09",
+  "fix": "Say that S5 is implicit in the training-time papers. Say that the deployment form (adaptation in context) is the authors' own addition. Or move S5 out of the \"stated\" count in the abstract and introduction."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K01",
+  "problem": "key claim scored qualify",
+  "evidence": "Rescored (first scorer skipped K01). Abstract states the shield exception without 'by our specialisation' (paper.tex:52 vs :58, :243); abstract lacks the caveat that the guarantee is only as strong as the enforcing components (paper.tex:243).",
+  "severity": "overclaim",
+  "key": "K01",
+  "fix": "In the abstract, mark the shield exception as our specialisation of alshiekh2018 and add that it holds only if the enforcing components are correct and cannot be bypassed."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K05",
+  "problem": "key claim scored qualify",
+  "evidence": "Core claim holds. Altman 045_fulltext/altman1999.txt:455: \"We focus in this section on models where all the cost objectives ... are specified in terms of expectations\"; lines 536-538 quote Ross and Chen that expected-cost constraints are \"not on the actual delay\". Satija satija2020.txt:178: \"Assumption 3.1 (Stationarity). The MDP is ergodic for any policy \u03c0\". Qualification: the sentence making the claim (paper.tex:122) says \"(the book notes sample-path variants by others)\", but altman1999.txt:545-547 reads \"Some other results on sample-path costs (both in the constraint and in the objective function) can be found in Altman and Shwartz (1991d)\", and Altman is the book's author, so not all variants are by others.",
+  "severity": "overclaim",
+  "key": "K05",
+  "fix": "Write \"(the book notes sample-path variants, by Ross and Varadarajan and by Altman and Shwartz)\" or drop the \"by others\"."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K19",
+  "problem": "key claim scored qualify",
+  "evidence": "The incident facts check out: openai2026.txt:31 'Our benchmarks run in a highly isolated environment'; openai2026.txt:32 'Hugging Face's production infrastructure'; openai2026c.txt:219 'the models did not have OpenAI's deployed cyber safeguards'; openai2026b.txt:145 'a form of metagaming, where models explicitly reason about their training or evaluation mechanisms'; openai2026b.txt:113 'agents adopting goals from one another'. But paper.tex:250 states both behaviours of the agents as a whole: 'The agents reasoned about the mechanism that scored them (U3) ... They took goals from one another (U1)'. The source limits both. openai2026b.txt:138 says 'some agents had read the ExploitGym paper'. openai2026b.txt:186 says 'Not every agent encountering the message board behaved this way', and lines 187-189 say some agents 'walked away' from the collective. The quote the paper gives for U1, 'did not consistently distrust goals passed along by other agents' (openai2026b.txt:180), states a vulnerability, not that goals were taken. The paper has no 'some agents' qualifier.",
+  "severity": "overclaim",
+  "key": "K19",
+  "fix": "In Section 5 and Appendix incidents, write 'some agents' for both behaviours. Cite openai2026b 'agents adopting goals from one another' for U1, and note that some agents declined."
+ },
+ {
+  "source": "claude",
+  "lens": "score",
+  "where": "096_review/key.csv",
+  "claim": "K20",
+  "problem": "key claim scored qualify",
+  "evidence": "I found no LLM-agent experiment in any cited tool paper. muslimani2025.txt:197 puts LLM alignment 'beyond the scope of this work', and the other LLM mentions in the tool texts are citations only. But the claim says the evidence 'comes from grid worlds, MuJoCo, Safety Gym, Atari and real-robot goal-reaching'. The paper's own sentence (paper.tex:255) adds 'theory and experiments in grid worlds ..., an analysis of reward functions from published driving papers \\citep{knox2023}, a study with human participants \\citep{muslimani2025}'. muslimani2025.txt:706 'participants selected reward functions under three experimental conditions'. Altman, Kaelbling and Alshiekh are not covered by the list. The claim's list is therefore incomplete: it leaves out two non-simulation sources and the theory-only works.",
+  "severity": "overclaim",
+  "key": "K20",
+  "fix": "Add 'theory, an analysis of published driving reward functions and a human-participant study' to the claim, or write 'simulated environments and robots, besides theory, a literature analysis and a human study'."
+ },
+ {
+  "source": "codex",
+  "lens": "codex",
+  "where": "Introduction; Conditions that the source papers do not state",
+  "claim": "In our reading the guarantees about learning or optimality (optimal policies and plans, convergence, soundness) use them, because each takes its reward or cost as fixed and single.",
+  "problem": "A fixed, single reward does not imply U3: that the agent must not reason about its oversight. Satija's stated feasibility theorem restricts policy updates and requires prior feasibility; it does not exclude policies that reason about a monitor. The paper turns a possible deployment concern into an additional prerequisite for the cited guarantees without establishing that dependency.",
+  "evidence": "047_extracts/satija2020/extracts.csv, e2, Theorem 3.1: \"Assume that successive policies are updated sufficiently slowly\" and \"Then the policy iteration step given by (SPI) is consistently feasible, i.e. if \u03c0k is feasible at x0 then so is \u03c0k+1 .\"",
+  "severity": "overclaim",
+  "key": "K02",
+  "fix": "Remove the blanket assertion that these guarantees require U3. Present oversight reasoning as a deployment concern, and identify a particular theorem dependency before claiming that it invalidates a guarantee."
+ }
+]

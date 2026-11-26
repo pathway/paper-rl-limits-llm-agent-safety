@@ -1,0 +1,418 @@
+# One entry per work. key: stable citation key used as [@key] in the draft.
+# short and year: the natbib label (Author, Year). text: the reference as printed.
+- key: mclean2026
+  short: McLean et~al.
+  year: '2026'
+  text: R. McLean, T. E. Lee, M. Mohammedalamen, K. Roice, G. Berseth, P. Pilarski, M. C. Machado, A. Lefaivre Škopac, B. Rosman, "AI Agent Safety is a Reinforcement Learning Problem," *Second Workshop on Agents in the Wild (AIWILD), ICML 2026*. https://openreview.net/forum?id=wvga9chmb6
+- key: hadfieldmenell2016
+  short: Hadfield-Menell et~al.
+  year: '2016'
+  text: D. Hadfield-Menell, A. Dragan, P. Abbeel, S. Russell, "Cooperative Inverse Reinforcement Learning," *NeurIPS 2016*. https://arxiv.org/abs/1606.03137
+- key: krakovna2018
+  short: Krakovna et~al.
+  year: '2018'
+  text: V. Krakovna, L. Orseau, R. Kumar, M. Martic, S. Legg, "Penalizing Side Effects Using Stepwise Relative Reachability," 2018. https://arxiv.org/abs/1806.01186
+- key: turner2020
+  short: Turner et~al.
+  year: '2020'
+  text: A. M. Turner, D. Hadfield-Menell, P. Tadepalli, "Conservative Agency via Attainable Utility Preservation," *AIES 2020*. https://arxiv.org/abs/1902.09725
+- key: greenblatt2024a
+  short: Greenblatt et~al.
+  year: '2024'
+  text: 'R. Greenblatt, B. Shlegeris, K. Sachan, F. Roger, "AI Control: Improving Safety Despite Intentional Subversion," *ICML 2024*. https://arxiv.org/abs/2312.06942'
+- key: greshake2023
+  short: Greshake et~al.
+  year: '2023'
+  text: 'K. Greshake, S. Abdelnabi, S. Mishra, C. Endres, T. Holz, M. Fritz, "Not What You''ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," *AISec 2023*. https://arxiv.org/abs/2302.12173'
+- key: denison2024
+  short: Denison et~al.
+  year: '2024'
+  text: 'C. Denison et al., "Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models," 2024. https://arxiv.org/abs/2406.10162'
+- key: skalse2022
+  short: Skalse et~al.
+  year: '2022'
+  text: J. Skalse, N. Howe, D. Krasheninnikov, D. Krueger, "Defining and Characterizing Reward Hacking," *NeurIPS 2022*. https://arxiv.org/abs/2209.13085
+- key: kaelbling1998
+  short: Kaelbling et~al.
+  year: '1998'
+  text: L. P. Kaelbling, M. L. Littman, A. R. Cassandra, "Planning and Acting in Partially Observable Stochastic Domains," *Artificial Intelligence* 101, 1998. https://doi.org/10.1016/S0004-3702(98)00023-X
+- key: altman1999
+  short: Altman
+  year: '1999'
+  text: E. Altman, *Constrained Markov Decision Processes*, CRC Press, 1999. https://doi.org/10.1201/9781315140223
+- key: howard1966
+  short: Howard
+  year: '1966'
+  text: R. A. Howard, "Information Value Theory," *IEEE Transactions on Systems Science and Cybernetics* 2(1), 1966. https://doi.org/10.1109/TSSC.1966.300074
+- key: kirk1970
+  short: Kirk
+  year: '1970'
+  text: 'D. E. Kirk, *Optimal Control Theory: An Introduction*, Prentice-Hall, 1970.'
+- key: sutton2018
+  short: Sutton and Barto
+  year: '2018'
+  text: 'R. S. Sutton, A. G. Barto, *Reinforcement Learning: An Introduction*, 2nd ed., MIT Press, 2018. http://incompleteideas.net/book/the-book-2nd.html'
+- key: carroll2022
+  short: Carroll et~al.
+  year: '2022'
+  text: M. Carroll, A. Dragan, S. Russell, D. Hadfield-Menell, "Estimating and Penalizing Induced Preference Shifts in Recommender Systems," *ICML 2022*. https://arxiv.org/abs/2204.11966
+- key: armstrong2018
+  short: Armstrong and Mindermann
+  year: '2018'
+  text: S. Armstrong, S. Mindermann, "Occam's Razor Is Insufficient to Infer the Preferences of Irrational Agents," *NeurIPS 2018*. https://arxiv.org/abs/1712.05812
+- key: sharma2024
+  short: Sharma et~al.
+  year: '2024'
+  text: M. Sharma et al., "Towards Understanding Sycophancy in Language Models," *ICLR 2024*. https://arxiv.org/abs/2310.13548
+- key: deng2025
+  short: Deng et~al.
+  year: '2025'
+  text: 'Z. Deng et al., "AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways," *ACM Computing Surveys*, 2025. https://arxiv.org/abs/2406.02630'
+- key: greenblatt2024b
+  short: Greenblatt et~al.
+  year: '2024'
+  text: R. Greenblatt et al., "Alignment Faking in Large Language Models," 2024. https://arxiv.org/abs/2412.14093
+- key: meinke2024
+  short: Meinke et~al.
+  year: '2024'
+  text: A. Meinke, B. Schoen, J. Scheurer, M. Balesni, R. Shah, M. Hobbhahn, "Frontier Models Are Capable of In-Context Scheming," 2024. https://arxiv.org/abs/2412.04984
+- key: manheim2018
+  short: Manheim and Garrabrant
+  year: '2018'
+  text: D. Manheim, S. Garrabrant, "Categorizing Variants of Goodhart's Law," 2018. https://arxiv.org/abs/1803.04585
+- key: everitt2021
+  short: Everitt et~al.
+  year: '2021'
+  text: 'T. Everitt, M. Hutter, R. Kumar, V. Krakovna, "Reward Tampering Problems and Solutions in Reinforcement Learning: A Causal Influence Diagram Perspective," *Synthese* 198, 2021. https://arxiv.org/abs/1908.04734'
+- key: hubinger2019
+  short: Hubinger et~al.
+  year: '2019'
+  text: E. Hubinger, C. van Merwijk, V. Mikulik, J. Skalse, S. Garrabrant, "Risks from Learned Optimization in Advanced Machine Learning Systems," 2019. https://arxiv.org/abs/1906.01820
+- key: everitt2017
+  short: Everitt et~al.
+  year: '2017'
+  text: 'T. Everitt, V. Krakovna, L. Orseau, S. Legg, "Reinforcement Learning with a Corrupted Reward Channel," *IJCAI 2017*, pp. 4705–4713. https://doi.org/10.24963/ijcai.2017/656 (extended report with M. Hutter: https://arxiv.org/abs/1705.08417)'
+- key: baker2025
+  short: Baker et~al.
+  year: '2025'
+  text: B. Baker et al., "Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation," 2025. https://arxiv.org/abs/2503.11926
+- key: wen2024a
+  short: Wen et~al.
+  year: '2024'
+  text: J. Wen et al., "Language Models Learn to Mislead Humans via RLHF," 2024. https://arxiv.org/abs/2409.12822
+- key: amodei2016
+  short: Amodei et~al.
+  year: '2016'
+  text: D. Amodei, C. Olah, J. Steinhardt, P. Christiano, J. Schulman, D. Mané, "Concrete Problems in AI Safety," 2016. https://arxiv.org/abs/1606.06565
+- key: hadfieldmenell2017
+  short: Hadfield-Menell et~al.
+  year: '2017'
+  text: D. Hadfield-Menell, S. Milli, P. Abbeel, S. Russell, A. Dragan, "Inverse Reward Design," *NeurIPS 2017*. https://arxiv.org/abs/1711.02827
+- key: shapira2026
+  short: Shapira et~al.
+  year: '2026'
+  text: Shapira et al., "Agents of Chaos," 2026. https://arxiv.org/abs/2602.20021
+- key: moldovan2012
+  short: Moldovan and Abbeel
+  year: '2012'
+  text: T. M. Moldovan, P. Abbeel, "Safe Exploration in Markov Decision Processes," *ICML 2012*. https://arxiv.org/abs/1205.4810
+- key: macdiarmid2025
+  short: MacDiarmid et~al.
+  year: '2025'
+  text: M. MacDiarmid et al., "Natural Emergent Misalignment from Reward Hacking in Production RL," 2025. https://arxiv.org/abs/2511.18397
+- key: shah2022
+  short: Shah et~al.
+  year: '2022'
+  text: 'R. Shah et al., "Goal Misgeneralization: Why Correct Specifications Aren''t Enough for Correct Goals," 2022. https://arxiv.org/abs/2210.01790'
+- key: leike2018
+  short: Leike et~al.
+  year: '2018'
+  text: 'J. Leike, D. Krueger, T. Everitt, M. Martic, V. Maini, S. Legg, "Scalable Agent Alignment via Reward Modeling: A Research Direction," 2018. https://arxiv.org/abs/1811.07871'
+- key: leike2015
+  short: Leike and Hutter
+  year: '2015'
+  text: J. Leike, M. Hutter, "Bad Universal Priors and Notions of Optimality," *COLT 2015*, PMLR 40. https://arxiv.org/abs/1510.04931
+- key: kenton2021
+  short: Kenton et~al.
+  year: '2021'
+  text: Z. Kenton, T. Everitt, L. Weidinger, I. Gabriel, V. Mikulik, G. Irving, "Alignment of Language Agents," 2021. https://arxiv.org/abs/2103.14659
+- key: lynch2025
+  short: Lynch et~al.
+  year: '2025'
+  text: 'A. Lynch et al., "Agentic Misalignment: How LLMs Could Be Insider Threats," 2025. https://arxiv.org/abs/2510.05179'
+- key: turner2021
+  short: Turner et~al.
+  year: '2021'
+  text: A. M. Turner, L. Smith, R. Shah, A. Critch, P. Tadepalli, "Optimal Policies Tend to Seek Power," *NeurIPS 2021*. https://arxiv.org/abs/1912.01683
+- key: gao2023
+  short: Gao et~al.
+  year: '2023'
+  text: L. Gao, J. Schulman, J. Hilton, "Scaling Laws for Reward Model Overoptimization," *ICML 2023*. https://arxiv.org/abs/2210.10760
+- key: garcia2015
+  short: García and Fernández
+  year: '2015'
+  text: J. García, F. Fernández, "A Comprehensive Survey on Safe Reinforcement Learning," *JMLR* 16, 2015. https://jmlr.org/papers/v16/garcia15a.html
+- key: beurerkellner2025
+  short: Beurer-Kellner et~al.
+  year: '2025'
+  text: L. Beurer-Kellner et al., "Design Patterns for Securing LLM Agents against Prompt Injections," 2025. https://arxiv.org/abs/2506.08837
+- key: alshiekh2018
+  short: Alshiekh et~al.
+  year: '2018'
+  text: 'M. Alshiekh, R. Bloem, R. Ehlers, B. Könighofer, S. Niekum, U. Topcu, "Safe Reinforcement Learning via Shielding," *AAAI 2018*. https://doi.org/10.1609/aaai.v32i1.11797 (arXiv: https://arxiv.org/abs/1708.08611)'
+- key: achiam2017
+  short: Achiam et~al.
+  year: '2017'
+  text: J. Achiam, D. Held, A. Tamar, P. Abbeel, "Constrained Policy Optimization," *ICML 2017*, PMLR 70:22–31. https://proceedings.mlr.press/v70/achiam17a.html
+- key: ray2019
+  short: Ray et~al.
+  year: '2019'
+  text: A. Ray, J. Achiam, D. Amodei, "Benchmarking Safe Exploration in Deep Reinforcement Learning," OpenAI technical report, 2019. https://cdn.openai.com/safexp-short.pdf
+- key: debenedetti2025
+  short: Debenedetti et~al.
+  year: '2025'
+  text: E. Debenedetti, I. Shumailov, T. Fan, J. Hayes, N. Carlini, D. Fabian, et al., "Defeating Prompt Injections by Design," 2025. https://arxiv.org/abs/2503.18813
+- key: debenedetti2024
+  short: Debenedetti et~al.
+  year: '2024'
+  text: 'E. Debenedetti, J. Zhang, M. Balunović, L. Beurer-Kellner, M. Fischer, F. Tramèr, "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," *NeurIPS 2024 Datasets and Benchmarks*. https://arxiv.org/abs/2406.13352'
+- key: ring2011
+  short: Ring and Orseau
+  year: '2011'
+  text: M. Ring, L. Orseau, "Delusion, Survival, and Intelligent Agents," *AGI 2011*, LNCS 6830, pp. 11–20. https://doi.org/10.1007/978-3-642-22887-2_2
+- key: taylor2016
+  short: Taylor
+  year: '2016'
+  text: 'J. Taylor, "Quantilizers: A Safer Alternative to Maximizers for Limited Optimization," *AAAI-16 Workshop on AI, Ethics and Society*. https://intelligence.org/files/QuantilizersSaferAlternative.pdf'
+- key: wang2026
+  short: Wang et~al.
+  year: '2026'
+  text: 'H. Wang, C. M. Poskitt, J. Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," *ICSE 2026*, pp. 2938–2950. https://arxiv.org/abs/2503.18666'
+- key: dalrymple2024
+  short: Dalrymple et~al.
+  year: '2024'
+  text: 'D. Dalrymple et al., "Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems," 2024. https://arxiv.org/abs/2405.06624'
+- key: sharwood2025
+  short: Sharwood
+  year: '2025'
+  text: S. Sharwood, "Vibe coding service Replit deleted user's production database, faked data, told fibs galore," *The Register*, 21 July 2025. https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident
+- key: abdullahi2025
+  short: Abdullahi
+  year: '2025'
+  text: 'A. Abdullahi, "''Catastrophic Failure'': AI Agent Wipes Production Database, Then Lies About It," *eWeek*, 22 July 2025. https://www.eweek.com/news/replit-ai-coding-assistant-failure/'
+- key: grigorev2026
+  short: Grigorev
+  year: '2026'
+  text: A. Grigorev, "How I Dropped Our Production Database and Now Pay 10% More for AWS," *AI Shipping Labs*, 6 March 2026. https://alexeyondata.substack.com/p/how-i-dropped-our-production-database
+- key: rootly2026
+  short: Rootly
+  year: '2026'
+  text: Rootly, "Hey Claude, where's my database?" (interview with A. Grigorev), *Humans of Reliability* podcast, 2026. https://rootly.com/humans-of-reliability/hey-claude-wheres-my-database-alexey-grigorev
+- key: owasp2025
+  short: OWASP GenAI Security Project
+  year: '2025'
+  text: 'OWASP GenAI Security Project, *OWASP Top 10 for LLM Applications 2025*, LLM01: Prompt Injection. https://genai.owasp.org/llmrisk/llm01-prompt-injection/'
+- key: krakovna2020
+  short: Krakovna et~al.
+  year: '2020'
+  text: 'V. Krakovna et al., "Specification Gaming: The Flip Side of AI Ingenuity," DeepMind blog, 2020. https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/'
+- key: duan2016
+  short: Duan et~al.
+  year: '2016'
+  text: 'Y. Duan, J. Schulman, X. Chen, P. L. Bartlett, I. Sutskever, P. Abbeel, "RL²: Fast Reinforcement Learning via Slow Reinforcement Learning," 2016. https://arxiv.org/abs/1611.02779'
+- key: wang2016
+  short: Wang et~al.
+  year: '2016'
+  text: J. X. Wang, Z. Kurth-Nelson, D. Tirumala, H. Soyer, J. Z. Leibo, R. Munos, C. Blundell, et al., "Learning to Reinforcement Learn," 2016. https://arxiv.org/abs/1611.05763
+- key: laskin2022
+  short: Laskin et~al.
+  year: '2022'
+  text: M. Laskin, L. Wang, J. Oh, E. Parisotto, S. Spencer, R. Steigerwald, D. J. Strouse, et al., "In-context Reinforcement Learning with Algorithm Distillation," 2022. https://arxiv.org/abs/2210.14215
+- key: zhang2020
+  short: Zhang et~al.
+  year: '2020'
+  text: H. Zhang, H. Chen, C. Xiao, B. Li, M. Liu, D. Boning, C.-J. Hsieh, "Robust Deep Reinforcement Learning against Adversarial Perturbations on State Observations," *NeurIPS 2020*. https://arxiv.org/abs/2003.08938
+- key: eysenbach2018
+  short: Eysenbach et~al.
+  year: '2018'
+  text: 'B. Eysenbach, S. Gu, J. Ibarz, S. Levine, "Leave no Trace: Learning to Reset for Safe and Autonomous Reinforcement Learning," *ICLR 2018*. https://arxiv.org/abs/1711.06782'
+- key: agarwal2026
+  short: Agarwal et~al.
+  year: '2026'
+  text: R. Agarwal, J. Lin, M. Braverman, E. Hazan, "AI Alignment via Incentives and Correction," 2026. https://arxiv.org/abs/2605.01643
+- key: moeini2026
+  short: Moeini et~al.
+  year: '2026'
+  text: A. Moeini, M. Kwon, A. K. Bozkurt, Y. Motai, R. Chandra, L. Feng, S. Zhang, "Safe In-Context Reinforcement Learning," *ICML 2026*. https://arxiv.org/abs/2509.25582
+- key: griffin2024
+  short: Griffin et~al.
+  year: '2024'
+  text: 'C. Griffin, L. Thomson, B. Shlegeris, A. Abate, "Games for AI Control: Models of Safety Evaluations of AI Deployment Protocols," 2024. https://arxiv.org/abs/2409.07985'
+- key: li2026
+  short: Li et~al.
+  year: '2026'
+  text: H. Li, S. Liu, Y. Ma, J. Ji, J. Dai, S. Zhang, K. Shi, et al., "Mitigating Agentic Deception via Evaluation-Side Partially Observable Games," 2026. https://arxiv.org/abs/2611.12835
+- key: pandya2026
+  short: Pandya et~al.
+  year: '2026'
+  text: 'R. Pandya, M. Bland, D. P. Nguyen, C. Liu, J. F. Fisac, A. Bajcsy, "From Refusal to Recovery: A Control-Theoretic Approach to Generative AI Guardrails," *IASEAI 2026*. https://arxiv.org/abs/2510.13727'
+- key: samineni2025
+  short: Samineni et~al.
+  year: '2025'
+  text: S. R. Samineni, D. Kalwar, K. Valmeekam, K. Stechly, S. Kambhampati, "RL in Name Only? Analyzing the Structural Assumptions in RL Post-training for LLMs," 2025. https://arxiv.org/abs/2505.13697
+- key: anwar2024
+  short: Anwar et~al.
+  year: '2024'
+  text: U. Anwar, A. Saparov, J. Rando, D. Paleka, M. Turpin, P. Hase, E. S. Lubana, et al., "Foundational Challenges in Assuring Alignment and Safety of Large Language Models," 2024. https://arxiv.org/abs/2404.09932
+- key: williams2024
+  short: Williams et~al.
+  year: '2024'
+  text: M. Williams, M. Carroll, A. Narang, C. Weisser, B. Murphy, A. Dragan, "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback," 2024. https://arxiv.org/abs/2411.02306
+- key: huang2026
+  short: Huang et~al.
+  year: '2026'
+  text: 'J. Huang, S. Chen, X. Liang, X. Ma, H. Yang, W. Ke, et al., "Task Success Is Not Enough: Side-effect-Aware Evaluation of Tool-Using Language Model Agents," 2026. https://arxiv.org/abs/2610.34167'
+- key: chua2025
+  short: Chua et~al.
+  year: '2025'
+  text: J. Chua, C. Wang, L. Yao, "Learning Natural Language Constraints for Safe Reinforcement Learning of Language Agents," 2025. https://arxiv.org/abs/2504.03185
+- key: deepseekai2025
+  short: DeepSeek-AI et~al.
+  year: '2025'
+  text: 'DeepSeek-AI, D. Guo, D. Yang, H. Zhang, J. Song, et al., "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning," 2025; *Nature* 645, 633–638. https://arxiv.org/abs/2501.12948'
+- key: zhang2025
+  short: Zhang et~al.
+  year: '2025'
+  text: Z. Zhang, C. Zheng, Y. Wu, B. Zhang, R. Lin, et al., "The Lessons of Developing Process Reward Models in Mathematical Reasoning," 2025. https://arxiv.org/abs/2501.07301
+- key: wallace2024
+  short: Wallace et~al.
+  year: '2024'
+  text: 'E. Wallace, K. Xiao, R. Leike, L. Weng, J. Heidecke, A. Beutel, "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions," 2024. https://arxiv.org/abs/2404.13208'
+- key: ouyang2022
+  short: Ouyang et~al.
+  year: '2022'
+  text: L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. L. Wainwright, et al., "Training Language Models to Follow Instructions with Human Feedback," *NeurIPS 2022*. https://arxiv.org/abs/2203.02155
+- key: zhang2026
+  short: Zhang et~al.
+  year: '2026'
+  text: 'G. Zhang, H. Geng, X. Yu, Z. Yin, Z. Zhang, Z. Tan, et al., "The Landscape of Agentic Reinforcement Learning for LLMs: A Survey," *TMLR* 2026. https://arxiv.org/abs/2509.02547'
+- key: lambert2025
+  short: Lambert
+  year: '2025'
+  text: N. Lambert, *Reinforcement Learning from Human Feedback*, 2025. https://arxiv.org/abs/2504.12501
+- key: kohli2026
+  short: Kohli et~al.
+  year: '2026'
+  text: 'Kohli, Khandelwal, Agarwal, Maity, Sheth, "Decision-Process Cards: Rethinking How RL Claims Are Reported," NeurIPS 2026 poster. https://neurips.cc/virtual/2026/poster/140028'
+- key: lang2024
+  short: Lang et~al.
+  year: '2024'
+  text: 'L. Lang, D. Foote, S. Russell, A. Dragan, E. Jenner, S. Emmons, "When Your AIs Deceive You: Challenges of Partial Observability in Reinforcement Learning from Human Feedback," *NeurIPS 2024*. https://arxiv.org/abs/2402.17747'
+- key: carr2022
+  short: Carr et~al.
+  year: '2022'
+  text: S. Carr, N. Jansen, S. Junges, U. Topcu, "Safe Reinforcement Learning via Shielding under Partial Observability," 2022. https://arxiv.org/abs/2204.00755
+- key: jansen2018
+  short: Jansen et~al.
+  year: '2018'
+  text: N. Jansen, B. Könighofer, S. Junges, A. C. Serban, R. Bloem, "Safe Reinforcement Learning via Probabilistic Shields," 2018. https://arxiv.org/abs/1807.06096
+- key: zverev2025
+  short: Zverev et~al.
+  year: '2025'
+  text: E. Zverev, S. Abdelnabi, S. Tabesh, M. Fritz, C. H. Lampert, "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?," *ICLR 2025*. https://arxiv.org/abs/2403.06833
+- key: costa2025
+  short: Costa et~al.
+  year: '2025'
+  text: M. Costa, B. Köpf, A. Kolluri, A. Paverd, M. Russinovich, A. Salem, S. Tople, L. Wutschitz, S. Zanella-Béguelin, "Securing AI Agents with Information-Flow Control," 2025. https://arxiv.org/abs/2505.23643
+- key: mallen2024
+  short: Mallen et~al.
+  year: '2024'
+  text: 'A. Mallen, C. Griffin, M. Wagner, A. Abate, B. Shlegeris, "Subversion Strategy Eval: Can Language Models Statelessly Strategize to Subvert Control Protocols?," 2024. https://arxiv.org/abs/2412.12480'
+- key: wen2024b
+  short: Wen et~al.
+  year: '2024'
+  text: J. Wen, V. Hebbar, C. Larson, A. Bhatt, A. Radhakrishnan, M. Sharma, H. Sleight, S. Feng, H. He, E. Perez, B. Shlegeris, A. Khan, "Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats," 2024. https://arxiv.org/abs/2411.17693
+- key: bhatt2025
+  short: Bhatt et~al.
+  year: '2025'
+  text: 'A. Bhatt, C. Rushing, A. Kaufman, T. Tracy, V. Georgiev, D. Matolcsi, A. Khan, B. Shlegeris, "Ctrl-Z: Controlling AI Agents via Resampling," 2025. https://arxiv.org/abs/2504.10374'
+- key: siththaranjan2024
+  short: Siththaranjan et~al.
+  year: '2024'
+  text: 'A. Siththaranjan, C. Laidlaw, D. Hadfield-Menell, "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF," *ICLR 2024*. https://arxiv.org/abs/2312.08358'
+- key: conitzer2024
+  short: Conitzer et~al.
+  year: '2024'
+  text: V. Conitzer, R. Freedman, J. Heitzig, W. H. Holliday, B. M. Jacobs, N. Lambert, M. Mossé, E. Pacuit, S. Russell, H. Schoelkopf, E. Tewolde, W. S. Zwicker, "Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback," 2024. https://arxiv.org/abs/2404.10271
+- key: dai2023
+  short: Dai et~al.
+  year: '2023'
+  text: 'J. Dai, X. Pan, R. Sun, J. Ji, X. Xu, M. Liu, Y. Wang, Y. Yang, "Safe RLHF: Safe Reinforcement Learning from Human Feedback," 2023. https://arxiv.org/abs/2310.12773'
+- key: satija2020
+  short: Satija et~al.
+  year: '2020'
+  text: H. Satija, P. Amortila, J. Pineau, "Constrained Markov Decision Processes via Backward Value Functions," *ICML 2020*, PMLR 119. https://arxiv.org/abs/2008.11811
+- key: wachi2023
+  short: Wachi et~al.
+  year: '2023'
+  text: 'A. Wachi, W. Hashimoto, X. Shen, K. Hashimoto, "Safe Exploration in Reinforcement Learning: A Generalized Formulation and Algorithms," *NeurIPS 2023*. https://arxiv.org/abs/2310.03225'
+- key: muslimani2025
+  short: Muslimani et~al.
+  year: '2025'
+  text: 'C. Muslimani, K. Johnstonbaugh, S. Chandramouli, S. Booth, W. B. Knox, M. E. Taylor, "Towards Improving Reward Design in RL: A Reward Alignment Metric for RL Practitioners," *Reinforcement Learning Journal*, 2025. https://arxiv.org/abs/2503.05996'
+- key: mohammedalamen2025a
+  short: Mohammedalamen et~al.
+  year: '2025'
+  text: M. Mohammedalamen, D. Morrill, A. Sieusahai, Y. Satsangi, M. Bowling, "Learning to Be Cautious," *Transactions on Machine Learning Research*, 2025. https://arxiv.org/abs/2110.15907
+- key: mohammedalamen2025b
+  short: Mohammedalamen and Bowling
+  year: '2025'
+  text: M. Mohammedalamen, M. Bowling, "Generalization in Monitored Markov Decision Processes (Mon-MDPs)," 2025. https://arxiv.org/abs/2505.08988
+- key: vasan2024
+  short: Vasan et~al.
+  year: '2024'
+  text: 'G. Vasan, Y. Wang, F. Shahriar, J. Bergstra, M. Jägersand, A. R. Mahmood, "Revisiting Sparse Rewards for Goal-Reaching Reinforcement Learning," *Reinforcement Learning Journal*, 2024. https://arxiv.org/abs/2407.00324'
+- key: knox2023
+  short: Knox et~al.
+  year: '2023'
+  text: 'W. B. Knox, A. Allievi, H. Banzhaf, F. Schmitt, P. Stone, "Reward (Mis)design for Autonomous Driving," *Artificial Intelligence*, 2023. https://arxiv.org/abs/2104.13906'
+- key: tse2025
+  short: Tse et~al.
+  year: '2025'
+  text: 'H. T. Tse, S. Chandrasekar, M. C. Machado, "Reward-Aware Proto-Representations in Reinforcement Learning," *NeurIPS 2025*. https://arxiv.org/abs/2505.16217'
+- key: klissarov2023
+  short: Klissarov and Machado
+  year: '2023'
+  text: 'M. Klissarov, M. C. Machado, "Deep Laplacian-based Options for Temporally-Extended Exploration," *ICML 2023*. https://arxiv.org/abs/2301.11181'
+- key: elelimy2025
+  short: Elelimy et~al.
+  year: '2025'
+  text: 'E. Elelimy, D. Szepesvari, M. White, M. Bowling, "Rethinking the Foundations for Continual Reinforcement Learning," *Reinforcement Learning Journal*, 2025. https://arxiv.org/abs/2504.08161'
+- key: lee2025
+  short: Lee
+  year: '2025'
+  text: 'S.-H. Lee, "Robust and Scalable Autonomous Reinforcement Learning in Irreversible Environments," *NeurIPS 2025*. https://openreview.net/forum?id=dAAz7afWJR'
+- key: huggingface2026a
+  short: Hugging Face
+  year: '2026'
+  text: 'Hugging Face, "Security incident disclosure — July 2026," 16 July 2026. https://huggingface.co/blog/security-incident-july-2026'
+- key: openai2026
+  short: OpenAI
+  year: '2026'
+  text: 'OpenAI, "OpenAI and Hugging Face partner to address security incident during model evaluation," 21 July 2026. https://openai.com/index/hugging-face-model-evaluation-security-incident/'
+- key: huggingface2026b
+  short: Hugging Face
+  year: '2026'
+  text: 'Hugging Face, "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident," 27 July 2026. https://huggingface.co/blog/agent-intrusion-technical-timeline'
+- key: openai2026b
+  short: OpenAI
+  year: '2026'
+  text: 'OpenAI, "The Hugging Face incident and the road ahead," 26 August 2026. https://openai.com/index/hugging-face-incident-and-the-road-ahead/'
+- key: openai2026c
+  short: OpenAI
+  year: '2026'
+  text: 'OpenAI, "OpenAI – Hugging Face Incident Technical Report," 26 August 2026. https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf'
+- key: metr2026
+  short: METR
+  year: '2026'
+  text: 'METR and Redwood Research (R. Greenblatt, A. Cotra, H. Wijk), "Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident," 26 August 2026. https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/'

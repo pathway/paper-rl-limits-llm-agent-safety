@@ -1,0 +1,5 @@
+id,code,label,definition,evidence_names_work
+named,N,cited for a technique they name,"McLean et al. name the technique (constrained MDP, reward function alignment, belief-state planning) and cite this paper for it",yes
+named_uncited,U,"technique named, no paper cited",McLean et al. name the technique (shielding) and cite no paper; the paper is our choice,no
+topic,T,cited under a topic,"McLean et al. cite the paper under a topic of the RL safety literature (safe exploration, reward misspecification, exploration, safe decisions under uncertainty); the tool label is ours",yes
+other,O,cited for another purpose,"McLean et al. cite the paper, but not as a safety tool",yes

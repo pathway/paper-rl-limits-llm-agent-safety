@@ -1,0 +1,165 @@
+{
+ "all": [
+  {
+   "id": "F6.0",
+   "i": 0,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The opening sentence says the tools \"keep their guarantees only under conditions that deployed agents do not meet\". The shield exception is stated with its own conditions in the same abstract (paper.tex:52): \"One guarantee survives deployment now ... if the shield sees every call and a safe fallback such as halting exists at every step\". So the shield also keeps its guarantee only under conditions, and the two sentences do not contradict each other. The first sentence is not a universal claim of failure. Frozen key K01 (096_review/key.csv) states the claim with the same exception: \"except a shield over properties of typed tool calls that sees every call, given a safe fallback\". The Introduction Position (paper.tex:~58) also says \"except ... for a shield\". The conclusion (paper.tex:286) repeats the exception. Round 5 entry R25 in rejected.csv also records that the shield is the one disclosed exception. At most this is a wording or emphasis point, so it is not material.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.1",
+   "i": 1,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "paper.tex:259 reads \"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove\". Line 58 defines binding as failing in deployed agents, and says \"U3 fails in reported cases\". Table 3 marks U3 \"~\" in D-AGENT, not \u2717. Line 266 keeps the qualifier: \"(U3 in reported cases)\". Line 259 drops it, so it contradicts K02 in key.csv (\"U1, U2 and U4; U3 in reported cases\") and Table 3. The S2/S3 point is weaker. Line 259 says S2 and S3 are relaxed, but only for the cited methods. That matches line 58, where S2 and S3 bind for world-state properties. 096_review/rejected.csv has no entry on this line 259 wording.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In the \"Assumptions get relaxed\" paragraph, replace \"the binding conditions are S4, S6 and U1--U4\" with \"the binding conditions are S4, S6, U1, U2 and U4, and U3 in reported cases\"."
+   }
+  },
+  {
+   "id": "F6.2",
+   "i": 2,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are real (paper.tex:191, 210, 212, 64). The circularity claim is not supported. The S4 and S6 D-AGENT cells are argued from evidence, not only from the setting definition. 085_setting_conditions/reasons.csv:5 (S4) reads \"D-AGENT fails: the world behind the tools is hidden, and its state is not in the context\". Paper.tex:248 backs this with the Terraform incident (\"the state was hidden (S4)\") and the Replit incident (\"the agent's belief was wrong (S4)\"). reasons.csv:7 (S6) cites effects no reset can undo: private repositories downloaded, credentials accessed and rotated, and a database restored only by the vendor. \"No reset\" in the Table 2 setting label is a short description. The S6 cell does not rest on it. The paper also does not say recovery never happens. It says recovery came from outside the agent's decision process (paper.tex:248), which fits the S6 definition \"by the agent, or by a reset it can use\". Recommending a rollback in the call to action (paper.tex:268) is consistent with this. The finding also repeats settled R24 and R38 (rejected.csv). They hold that structural readings of the setting fit the paper's rule \"x when the condition fails in the setting as usually run\". They also hold that the S6 x stands on the genuine deployment incidents. The disclosure at line 64 is a wording point, not a wrong fact, quote or count.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.3",
+   "i": 3,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "The paper contradicts itself. The Position (paper.tex:58, draft.md:9) says \"S5 also fails, but only by our convention ..., and the safety filters do not need it.\" Table 1 (paper.tex:101-102) marks S5 as \"filter\" for Wachi and \"input\" for Alshiekh. Its caption says a word means \"needed in part\". Section 5 (paper.tex:243) says \"A shield needs S1 in full and S2--S5 in part\". Appendix line 397 says S5 holds \"in part, a learner filtered to a certified safe set\". cells.csv:18 says Wachi's guarantee \"holds when the agent executes only actions in the certified safe set\". Section 3 says the guarantees \"need little control of the learner\", which is weaker than \"do not need it\". rejected.csv has no entry covering this wording. R22 covers design choices only, and the finding does not dispute the S5 convention.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In draft.md line 9, replace \"and the safety filters do not need it\" with \"and the safety filters need it only in part (control of which actions run, not of the learner's update)\"."
+   }
+  },
+  {
+   "id": "F6.4",
+   "i": 4,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are in the paper (paper.tex:52 abstract; :122 \"Each of the three uses a form of S6: a reset, ergodicity, or repeated runs over which an expectation is meaningful\"). The paper does not say Altman assumes the same thing as the other two. The abstract sets the third apart with \"a third bounds the cost only in expectation over repeated runs\", and the Table 1 cell is \"expect.\" rather than a full check mark, so the full-versus-part distinction is kept. In the paper's own definition, S6 is \"Trials repeat, or every state is recoverable\" (064_conditions), so a repeated-trials requirement is an S6 form by that definition. The source supports the description: cells.csv S6 for altman1999 reads \"in expectation: ... constrains the average and not 'the actual' cost of one run\". Sec. 3 says the CMDP constraints \"do not bound the cost of one run\". The reviewer's objection is that deployed agents do run many episodes, so the grouping is a wording or emphasis choice. No fact, count, quote or key claim is wrong.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.5",
+   "i": 5,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is accurate. paper.tex:122 says \"one assumes that ``it is possible to reach any state from s0'' \\citep[Assumption C.1]{tse2025}\". That matches tse2025.txt:1759-1765. The sentence says only that Tse assumes this. It does not say the assumption enters a safety or convergence guarantee. The paper also reports the assumption's limited role itself. Cell 065_tool_conditions/cells.csv:67 (paper.tex:658) says: \"Assumption C.1, that 'it is possible to reach any state from s0 under the default policy', serves one appendix result and not the convergence theorem.\" Table 1 marks Tse S6 as \"exper.\" The sentence sits in a passage saying the exploration papers do not fill the S6 gap, and the reviewer's complaint is only about emphasis and grouping. The paragraph's lead claim, that the tools \"assume reversibility\", rests mainly on Wachi's reset and Satija's ergodicity. The Tse clause is an accurate side remark, and the qualification the reviewer asks for is already in the paper.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.6",
+   "i": 6,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "paper.tex:259 says \"the binding conditions are S4, S6 and U1--U4, which scaling has not been shown to remove.\" The paper defines binding as failing in deployed agents (paper.tex:58). Line 58 and key K02 both say \"U1, U2 and U4 fail outright in D-AGENT; U3 fails in reported cases\". Table line 215 grades U3 in D-AGENT as ~. Line 266 repeats \"(U3 in reported cases)\". So the Alternative views sentence lists U3 as binding without the qualifier K02 requires. No rejected.csv entry covers this (R13, R16 and R24 concern the stance and evidence of U3, not this sentence). The sentence exists only in draft prose, at 200_draft/draft.md line 81.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In draft.md line 81, replace \"the binding conditions are S4, S6 and U1--U4\" with \"the binding conditions are S4, S6, U1, U2 and U4 (and U3 in reported cases)\"."
+   }
+  },
+  {
+   "id": "F6.7",
+   "i": 7,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are real (paper.tex:58, :232, :259), but they do not contradict each other. Line 58 says S2 and S3 bind \"for properties of world state\", which is a scoped claim. Line 259 (\"True for S2 and S3: the cited CMDP method runs model-free with neural networks\") is about relaxing finite or tabular representation in general, and it says nothing about world-state properties. 085_setting_conditions/reasons.csv supports the scoped reading for S2: \"D-AGENT fails: the effect of a tool call on the world is not modelled.\" Line 259's list of binding conditions (S4, S6, U1--U4) is a short list used to rebut the scaling point, and it does not deny the scoped S2/S3 claim. The reviewer's S4, S6 and U cells match the sources, as the reviewer admits. At most this is a wording or emphasis gap: the final list could name S2/S3 as scoped, or line 58 could be softer on S3. That is a nice-to-have qualification, not a wrong fact, quote, count or cell. R39 in 096_review/rejected.csv already settles the sibling objection that K02's \"binding\" wording scores qualify.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.8",
+   "i": 8,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The finding scores the frozen key text K12 (key.csv:13), not a paper statement. The paper already carries every condition the finding says is missing. paper.tex:243 reads: \"If the shield sees every tool call and the property is over action labels ... so no model of the world dynamics is needed. This specialisation is ours, and it needs a safe action, such as halting, at every step\". It also says \"S1 holds only in part: the rule covers only what it names\" and \"the guarantee is only as strong as the components that enforce them\". The Alshiekh quote (\"some approximate model of when which action is unsafe\", \"unavoidable if the allowed actions depend on the state of the environment\") is quoted accurately. The paper marks the trivial-abstraction half as \"ours\", so it is not attributed to Alshiekh. The paper makes no overclaim, and a short key summary that omits conditions the paper states does not change the paper's claim.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.9",
+   "i": 9,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are real: paper.tex:437 reads \"each is given, but none is a specification of safety\", and the paper.tex:64 sentence names S5 and U2 only. But the S1 training cells are graded \"~\", which the table legend defines as \"holds in usual runs but fails in reported cases or holds only in part\". The S1 bullet states the reason for that grade in full: a reward model, PRM or success test is given, but it does not specify safety. 085_setting_conditions/cells.csv lines 3-5 hold this \"~\" for T-CHAT, T-PRM and T-AGENT, so the grade is disclosed. Also, 096_review/rejected.csv R37 and R41 already say the paper uses S1 in a narrower sense (a formal, enforceable cost, bound or rule list) than the loose label \"Safety specification is given\". That makes \"given but not a safety specification\" a partial grade by the paper's own reading. The reviewer asks for a different grade, or for S1 to be added to the paper.tex:64 list of counts that rest on a convention. That is a judgement about wording and a nice-to-have qualification. It is not a wrong fact, quote or count, and no cell contradicts its source. The point that \"at most one outright failure\" depends on this grade is true. It is disclosed in the table and in the S1 reason, and 096_review/key.csv K11 says the cells are right.",
+    "source_file": "085_setting_conditions/cells.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.10",
+   "i": 10,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "paper.tex:159 and 075_mclean_conditions/stance.csv:2 (S1) say: \"The state of their POMDP includes ``the user's intents, safety constraints'', which the agent does not observe.\" 045_fulltext/mclean2026.txt \u00a73.5 says: \"However, this complete task specification is unlikely to be fully observed by the AI agent\". It also says the observation function is \"a lossy process, as these inputs cannot fully capture the true state of the world and the user's intents\". McLean et al. claim partial, lossy observation, not that the agent never observes these items. The same state list includes tool-call results, which the agent does observe. \"Does not observe\" is stronger than the source, so it describes McLean et al. wrongly. This sentence is not covered by rejected.csv. The finding is correct that the quoted fragments themselves match the source. The defect is the added gloss. The S1 stance \"partly\" and K18 are not harmed in substance, but the source is misdescribed.",
+    "source_file": "075_mclean_conditions/stance.csv",
+    "fix": "In stance.csv row S1, change \"which the agent does not observe\" to \"which they say the agent is unlikely to observe fully\". Rebuild so paper.tex:159 follows."
+   }
+  },
+  {
+   "id": "F6.11",
+   "i": 11,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper does say this (reasons.csv S2; paper.tex:439: \"T-AGENT: the sandbox is built by the designer but its response to tool calls is not modelled\"; cells.csv:12 S2,T-AGENT,~). The \"~\" is a defensible judgement. A designer-built sandbox is a given simulator, so part of the dynamics exists. Tool-call effects are not modelled. D-AGENT fails because no such built environment exists. No source contradicts the cell. The reviewer asks for a more precise reason, which is wording or a nice-to-have qualification. It is not a wrong fact, quote or count. The fix proposed is a regrade, which is a judgement call. The finding is not in rejected.csv.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F6.12",
+   "i": 12,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quote is in paper.tex line 268: \"Treat tool calls that the agent cannot undo as needing approval ... the cited tools that need S6 assume such calls do not exist.\" The finding says that S6 also allows recovery through a usable reset, so \"such calls\" overstates what the tools exclude. The paper's own definition at line 248 already covers this: \"We call an action irreversible when the agent cannot undo it and its decision process has no reset\". The sentence is a short paraphrase of that definition. The sources match it. Satija assumes \"ergodic for any policy\", so no state is permanently unrecoverable. Wachi's emergency stop resets the environment. The tool-condition cells for these tools, and line 122 (\"Each of the three uses a form of S6: a reset, ergodicity, or repeated runs\"), already say that a reset counts as S6. The finding's e1 and e9 quotes from Wachi support the reset reading and do not contradict the sentence. The gap between \"cannot undo\" and \"cannot undo and no reset\" is a wording nuance. It is not a wrong fact, a wrong citation or a changed key claim.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  }
+ ],
+ "fixes": [
+  "F6.1",
+  "F6.3",
+  "F6.6",
+  "F6.10"
+ ],
+ "fixlog": "I applied all four findings in three edits. The build passes and all tests pass.\n\n**Changes made**\n- **F6.1 and F6.6 (one edit):** both findings target the same sentence at `200_draft/draft.md:81`, so I merged them. It now reads \"the binding conditions are S4, S6, U1, U2 and U4 (and U3 in reported cases), which scaling has not been shown to remove\". I used the F6.6 wording because it matches line 266. It now shows at `paper.tex:259`.\n- **F6.3:** `200_draft/draft.md:9`. \"and the safety filters do not need it\" now reads \"and the safety filters need it only in part (control of which actions run, not of the learner's update)\". It now shows at `paper.tex:58`.\n- **F6.10:** row S1 of `075_mclean_conditions/stance.csv`. \"which the agent does not observe\" now reads \"which they say the agent is unlikely to observe fully\". It now shows at `paper.tex:159`.\n- **Change log:** `/usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_6.csv` has 3 rows.\n\n**Stale claim:** the F6.10 edit made the claim `caption_mclean_stance` (\"What McLean et al. say about each condition.\") stale, and the first build stopped on it. I re-read it, and it is still true. I stamped it with \"LLM (Claude), after convergence round 6\" and ran the build again.\n\n**Findings skipped:** none.\n\n**Build result:** `wrote .../300_render/out/paper.pdf | 82 of 104 references cited`\n\n**Tests:**\n\n| Folder | Passed |\n|---|---|\n| 100_analysis | 14 |\n| 300_render | 24 |\n| 047_extracts | 4 |\n| 040_biblio | 3 |\n| 096_review | 4 |",
+ "checks": [
+  {
+   "lens": "consistency",
+   "change": "2: 'and the safety filters do not need it' changed to 'need it only in part (control of which actions run, not of the learner's update)'",
+   "ok": false,
+   "problem": "The new Position sentence contradicts the paper's definition of S5 and its later statement about shields. S5 is 'Designer controls the learner's update'. The parenthetical says the part that filters need is not the learner's update, so by that definition they do not need S5. draft.md:60 and the S5 cells say shields need S5 'only for learning, not for its safety guarantee'. The Wachi cell says the safety guarantee holds for any RL algorithm given the certified set. The rendered Position and the S5 bullet now disagree.",
+   "evidence": "200_draft/draft.md:9 (paper.tex:58): 'the safety filters need it only in part (control of which actions run, not of the learner's update)'. 200_draft/draft.md:60 (paper.tex:226): 'The deployment tool of classical safe RL is the shield, which needs S5 only for learning, not for its safety guarantee'. 064_conditions row S5: 'Designer controls the learner's update'. 065_tool_conditions/cells.csv:24 (Alshiekh): 'not for safety, in part for learning'. Key K07: 'need little control of the learner'.",
+   "repair": "Make the Position sentence match line 60, for example: 'and the safety filters need it only in part, for learning and not for their safety guarantee.' Or restore: 'and the safety filters do not need it for their guarantee.'"
+  }
+ ],
+ "repair": "I repaired change 2 because the flag holds.\n\n**The flag checks out.**\n- S5 is defined as \"Designer controls the learner's update\" (064_conditions).\n- The round-6 parenthetical said filters need \"control of which actions run, not of the learner's update\". Under that definition, the filters would not need S5 at all.\n- That conflicts with draft.md:60 (\"needs S5 only for learning, not for its safety guarantee\") and with the Alshiekh cell at 065_tool_conditions/cells.csv:24 (\"not for safety, in part for learning\").\n\n**The change.** I used the first repair the flag suggested.\n- File: `/usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/200_draft/draft.md`, line 9.\n- Old: `and the safety filters need it only in part (control of which actions run, not of the learner's update).`\n- New: `and the safety filters need it only in part, for learning and not for their safety guarantee.`\n- I added row `2r` (F6.3) to `/usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_6.csv`. Its source quotes are draft.md:60, the S5 definition and cells.csv:24.\n\n**Build and tests all passed.**\n- Build: `300_render/out/paper.pdf` written, with 82 of 104 references cited. The new sentence appears once in `paper.tex`.\n\n| Suite | Result |\n|---|---|\n| 100_analysis | 14 passed |\n| 300_render | 24 passed |\n| 047_extracts | 4 passed |\n| 040_biblio | 3 passed |\n| 096_review | 4 passed |\n\n**One problem I did not touch.** Rows 1\u20133 appear twice in round_6.csv. They were duplicated before I appended row 2r."
+}

@@ -1,0 +1,11 @@
+id,kind,locator,text,tex
+e1,line,Timeline,"A Terraform auto-approve command inadvertently wiped out all production infrastructure, including the Amazon Relational Database Service (RDS).",
+e2,line,Intro,"Thankfully, they helped me restore the database, and the full recovery took about 24 hours.",
+e3,line,Intro,"To make matters worse, all automated snapshots were deleted too.",
+e4,line,Timeline,"Started deploying website changes using Terraform, but I forgot to use the state file, as it was on my old computer.",
+e5,line,Recovery,All permissions are disabled. No automatic execution.,
+e6,line,Timeline,"The database was fully restored, containing 1,943,200 rows in the courses_answer table alone.",
+e7,line,What Actually Happened,It replaced my current state file with an older one that had all the info about the DataTalks.Club course management platform.,
+e8,line,Deleting with terraform destroy,So I didn’t stop the agent from running terraform destroy,
+e9,line,Deleting with terraform destroy,"At that moment, I still believed we were cleaning up only the newly created resources.",
+e10,line,Contacting AWS Support,"Around midnight, I opened a support ticket about a deleted database and missing backups.",

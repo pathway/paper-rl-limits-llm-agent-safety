@@ -1,0 +1,22 @@
+id,verdict,changed,finder_hits,evidence
+K01,supported,yes,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K02,supported,yes,3,round 1 scorer: supported; see scratchpad review/round_1.json
+K03,supported,no,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K04,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K05,supported,no,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K06,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K07,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K08,supported,no,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K09,supported,yes,4,round 1 scorer: supported; see scratchpad review/round_1.json
+K10,supported,no,2,round 1 scorer: supported; see scratchpad review/round_1.json
+K11,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K12,supported,yes,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K13,supported,yes,2,round 1 scorer: supported; see scratchpad review/round_1.json
+K14,supported,no,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K15,supported,no,3,round 1 scorer: supported; see scratchpad review/round_1.json
+K16,supported,no,1,round 1 scorer: supported; see scratchpad review/round_1.json
+K17,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K18,supported,no,2,round 1 scorer: supported; see scratchpad review/round_1.json
+K19,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K20,supported,no,0,round 1 scorer: supported; see scratchpad review/round_1.json
+K21,supported,yes,1,round 1 scorer: supported; see scratchpad review/round_1.json

@@ -1,0 +1,15 @@
+key,tool,label_origin,mclean_role,mclean_term,role_evidence,guarantee,guarantee_kind,mclean_locator,appendix_intro,decision
+altman1999,"CMDP, linear programming",source,named,constrained MDP,e24; e2,Optimal policy under expected-cost constraints,safety,"§1, §3.6.2, §4, §5","Altman's monograph, cited by @mclean2026 for constrained MDPs.",D1
+satija2020,"CMDP, backward value functions",ours,named,constrained MDP,e22,Feasible at every update,safety,§4,"Cited by @mclean2026 with @altman1999 for constrained MDPs. The label ""backward value functions"" is ours.",D1
+wachi2023,Safe exploration,ours,topic,,e2,Safe w.p. 1-δ,safety,§1,"Cited by @mclean2026 for ""ensuring safe exploration"".",D1
+alshiekh2018,Shielding,source,named_uncited,shielding,e4,Specification never violated,safety,"§3.6.2, §5 (named, not cited)","@mclean2026 names shielding but cites no paper; @wachi2023 say their method ""can be regarded as a variant of shielding methods"", citing this paper.",D1
+muslimani2025,Reward alignment metric,source,named,reward function alignment,e24; e2,None (a diagnostic),none,"§1, §3, §5","Cited by @mclean2026 for ""diagnosing reward misspecification"". It is a diagnostic and gives no safety guarantee.",D1
+mohammedalamen2025a,Learning to be cautious,ours,topic,,e3,Sound under reward uncertainty,other,§3,"Cited by @mclean2026 for ""safe sequential decision-making under uncertainty"".",D1
+mohammedalamen2025b,Monitored MDPs,ours,topic,,e3,"Convergence, tabular only",other,§3,Cited by @mclean2026 with @mohammedalamen2025a.,D1
+kaelbling1998,Belief-state planning,source,named,belief-state planning,e21,Optimal plan,other,§3.6.3,Cited by @mclean2026 for observation ambiguity.,D1
+vasan2024,Minimum-time reward,ours,topic,,e3,None (empirical),none,§3.5,Cited by @mclean2026 for reward misspecification. It recommends a reward specification and gives no safety guarantee.,D2
+knox2023,Reward sanity checks,ours,topic,,e3,None (a diagnostic),none,§3.5,Cited by @mclean2026 for reward misspecification. It is a diagnostic and gives no safety guarantee.,D2
+tse2025,Default representation,ours,topic,,e3,"Convergence of DP, tabular",other,§3.5,"Cited by @mclean2026 for exploration. It is a representation for reward-aware exploration, not a safety method.",D2
+klissarov2023,Laplacian exploration options,ours,topic,,e3,None (empirical),none,"§3.5, §4",Cited by @mclean2026 for exploration. It increases state coverage and gives no safety guarantee.,D2
+elelimy2025,History process and deviation regret,ours,other,,e23,None about safety (a consistent estimator),none,§4,"Cited by @mclean2026 for a history-to-state map against the finite context window. It is a formalism and an evaluation measure, not a safety method.",D3
+lee2025,Autonomous RL in irreversible environments,ours,other,,e11,None (empirical),none,§3.6.2,"Cited by @mclean2026 for ""irreversible states"". It reduces human resets in training and gives no safety guarantee.",D3

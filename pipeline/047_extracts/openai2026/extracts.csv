@@ -1,0 +1,6 @@
+id,kind,locator,text,tex
+e1,line,What happened,"This incident occurred during an internal evaluation which prompts models to pursue advanced exploitation using complex attack paths, in an effort to quantify their cyber capabilities.",
+e2,line,What happened,"Our benchmarks run in a highly isolated environment, with network access constrained to the ability to install packages through an internally hosted third-party software that acts as a proxy and cache for package registries.",
+e3,line,What happened,"To gain access, the models identified and exploited a zero-day vulnerability (which we’ve now responsibly disclosed to the vendor) in the package registry cache proxy.",
+e4,line,What happened,"Knowing this, the model searched for and successfully found ways to gain access to secret information that it could use to cheat the evaluation.",
+e5,line,Actions,These deployment safeguards were intentionally not enabled during this evaluation because it was aimed at testing cyber vulnerabilities.,

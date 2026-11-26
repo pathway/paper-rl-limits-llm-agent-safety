@@ -1,0 +1,2 @@
+change,finding_ids,file,old,new,source_quote
+1,F7.3,200_draft/draft.md,(the book notes sample-path variants by others),"(the book notes sample-path variants, by Ross and Varadarajan and by Altman and Shwartz)","045_fulltext/altman1999.txt:540-541: ""This type of constrained problem was solved by Ross and Varadarajan (1989, 1991) using again an LP approach.""; 045_fulltext/altman1999.txt:545-547: ""Some other results on sample-path costs (both in the constraint and in the objective function) can be found in Altman and Shwartz (1991d)."""

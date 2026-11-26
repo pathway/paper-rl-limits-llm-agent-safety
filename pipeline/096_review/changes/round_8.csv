@@ -1,0 +1,2 @@
+change,finding_ids,file,old,new,source_quote
+1,F8.0,200_draft/draft.md,depends only on executing actions from the certified safe set,"depends on executing only actions from the certified safe set, on an added emergency-stop action, and on a valid uncertainty quantifier (Assumption 3.4)","045_fulltext/wachi2023.txt:332-333: ""First, the action space is augmented so that the agent can execute the emergency stop action""; 045_fulltext/wachi2023.txt:405: ""Theorem 4.1. Under Assumption 3.4, MASE guarantees safety with a probability of at least 1 − δ."""

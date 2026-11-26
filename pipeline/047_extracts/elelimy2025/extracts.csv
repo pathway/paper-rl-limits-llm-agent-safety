@@ -1,0 +1,11 @@
+id,kind,locator,text,tex
+e1,theorem,Theorem 1,"Theorem 1 (Estimating the H-step Deviation Regret). The estimator we defined above, ρ̂T (ϕ, λ, e), is a consistent estimator of deviation regret ρT (ϕ, λ, e) for all environments e, deviations ϕ, γ ∈ [0, 1], and agents λ that take every action with probability at least c > 0 in every timestep.",
+e2,line,§2,"Moreover, real-world settings do not allow one to reset the world into repeatable episodes or revisit states previously visited. You, the reader, can never revisit the state before you read these words. This inability to revisit states renders ergodicity assumptions unrealistic for real-world settings.",
+e3,line,,"Finally, we assume that the agent’s goal is a preference relation over histories that satisfies the reward hypothesis axioms (Bowling et al., 2023), including temporal γ-indifference.",
+e4,line,,"Formally, we assume a finite action space,SA, and a finite observation space O.",
+e5,line,,"Formally, let S be a finite set, which we will call states, and let S : H → S be some fixed partition of the histories such that S(h) ∈ S is the agent’s representation of the state for history h.",
+e6,line,,"It is not intended to restrict the dynamics of the environment, it is the agent’s own representation of the history.",
+e7,line,,"We identify four key pillars of the traditional reinforcement learning foundations that are antithetical to the goals of continual learning: the Markov decision process formalism, the focus on atemporal artifacts, the expected sum of rewards as an evaluation metric, and episodic benchmark environments that embrace the other three foundations.",
+e8,line,,"They reinforce the idea that environments can always be thought of as ergodic and episodic and exhibit an optimal policy, which is the assumed goal of traditional RL training.",
+e9,line,,"We then trained a PPO (Schulman et al., 2017) agent in this Continuing Swimmer environment for 50 million steps and repeated the experiment using 10 different seeds.",
+e10,line,,This is a fair objection.,

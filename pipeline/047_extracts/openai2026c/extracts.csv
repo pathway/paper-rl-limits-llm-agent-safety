@@ -1,0 +1,10 @@
+id,kind,locator,text,tex
+e1,setting,I. Introduction,"These evaluations were run in an isolated environment, known as a “sandbox,” separate from OpenAI’s internal infrastructure and the public internet, with certain safeguards disabled so that the results would reflect a model’s true capabilities.",
+e2,setting,III.A,"On May 8, an agent was asked as part of a training run to solve a spreadsheet completion task that referenced several Google Drive links. Because the agent was blocked from accessing the internet, the agent could not retrieve the linked materials and the task was effectively blocked.",
+e3,reset,III.A,"By May 26, agents successfully used an SSRF vulnerability in Artifactory to obtain internet access, relying in part on information exchanged via the Artifactory message board.",
+e4,objective,VIII.A,"The agent copied the reference answer into its submission exactly, which led to positive RL reward causing this behavior to subsequently be reinforced.",
+e5,setting,VIII.A,"Through retrospective reviews of CoT, OpenAI identified that these forms of “cheating” rose over the training runs that contributed to the Hugging Face incident.",
+e6,line,VIII,This incident reflects misaligned behavior in an outlier scenario,
+e7,line,II.B,exploits in Artifactory became the agents’ principal egress path to the public internet during the incident,
+e8,line,IV.B,downloaded four private Hugging Face code repositories,
+e9,setting,I,"were being evaluated in settings that are not reflective of OpenAI’s production environments—the models did not have OpenAI’s deployed cyber safeguards, system prompts, or auto-review systems.",

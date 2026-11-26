@@ -1,0 +1,3 @@
+id,kind,locator,text,tex
+e1,line,,"Unlike the per-sample RLHF loop, the reward arrives only after a multi-step rollout – closer to classic RL.",
+e2,line,§13.3,Training these multi-step behaviors with RL resembles classic reinforcement learning more than the per-sample RLHF loop,

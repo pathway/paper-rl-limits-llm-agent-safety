@@ -1,0 +1,123 @@
+[
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 7, open problem 2 (paper.tex:278)",
+  "claim": "replace its emergency stop, which resets the environment, by a halt that ends the episode in place. The state reached before the halt persists into the next episode.",
+  "problem": "The problem removes only the reset of the emergency stop. Wachi et al. pose an episodic problem with a fixed episode length H and an initial state s1, so every episode that ends without a stop also starts again from s1. The text does not say what happens at the end of such an episode. If that reset stays, the state persists only after a halt and the problem is not 'without reset'. If it goes, 'episode' and the start state of the comparator policy are undefined, and regret 'in the number of episodes' has no meaning.",
+  "evidence": "045_fulltext/wachi2023.txt:91-95 'We consider an episodic safe RL problem ... H is a (fixed) length of each episode ... s1 is an initial state'; :321 'start a new episode from an initial safe state'.",
+  "severity": "wrong",
+  "key": "K13",
+  "fix": "State that no reset occurs at all: each episode of length H starts in the state where the last one ended, after a halt or not. Measure regret over episodes against the best constrained policy from the current start state, or in steps against its average reward."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Abstract; Section 4 (paper.tex:221); Conclusion (paper.tex:286)",
+  "claim": "these conditions, not the scale of language, set the research agenda; seven of eight need in full a condition that fails in D-AGENT",
+  "problem": "The headline count includes S2 and S3, the two conditions that McLean et al. concede as the scaling gap. The thesis is that the obstacle is not scale, so the count that supports it is the count with S2 and S3 granted. The paper does not give it. From Table 1 it is six of eight: only belief-state planning (Kaelbling) fails on S2 and S3 alone. Related to settled item R04 (deferred), but this adds a count and does not drop S3 from the headline.",
+  "evidence": "Table 1 rows with a guarantee: altman1999 S4; satija2020 S4, S5, S6; wachi2023 S4, S6; mohammedalamen2025a S4; mohammedalamen2025b S4, S5, S6; tse2025 S4, S5; kaelbling1998 S2, S3 only; alshiekh2018 none.",
+  "severity": "unsupported",
+  "key": "K01",
+  "fix": "Add a computed fact in 100_analysis/analyze.py (test first): works with a guarantee that need in full a condition other than S2 and S3 that fails in D-AGENT. Print it next to the seven of eight in Section 4 and add it to sensitivity.md."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 6 (paper.tex:255-261); Section 7 (paper.tex:266)",
+  "claim": "The relaxations keep S4 and S6. / We pose none for S4, U2 or U4, which remain open.",
+  "problem": "S4 carries most of the count: six of the eight works with a guarantee need S4 in full. McLean et al. build on partial observability and offer belief-state planning for it. The paper does not answer the view 'POMDP methods are the tools for hidden state', and it poses no open problem for S4. The only answer is in Table 1 (Kaelbling needs S2 and S3), and the text never draws it.",
+  "evidence": "paper.tex:162 'S4 builds on ... Partial observability is the basis of their POMDP mapping'; Table 1 S4 column; paper.tex:266.",
+  "severity": "unsupported",
+  "key": "K02",
+  "fix": "Add to Section 6, third view, one or two sentences: the tool cited for hidden state, belief-state planning, removes S4 only by requiring a complete model and finite spaces (S2, S3), which fail in D-AGENT; shields under partial observability also need a model (Carr et al.). State why no open problem is posed for S4."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 5, shield item (paper.tex:243)",
+  "claim": "the property is over action labels (block every DROP and halt) ... Free-form code and shell commands are outside the class",
+  "problem": "The example rule is over SQL text. A DROP statement is free-form code sent as the argument of a tool call; a rule on it must parse the code, and other statements (TRUNCATE, DELETE, a stored procedure) have the same effect. By the paper's own boundary this example is outside the class.",
+  "evidence": "paper.tex:243 'whether a command deletes a database is a property of its effect, not of its label'.",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Use an example over a typed call, for example: block every call to a delete_database tool and halt. Or say that the rule is over the tool name and typed arguments, not over code inside an argument."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 4, second reading (paper.tex:228); Appendix C (paper.tex:432)",
+  "claim": "A deployed LLM agent differs from a deployed RL policy (D-RL against D-AGENT) on S1-S6 and U1-U4.",
+  "problem": "The D-RL column is graded by two standards. Appendix C says its cells 'record what the tools assume' (S1, S4, U3 hold because the tools assume them), but S2, S3 and S6 are graded by practice ('many learn without one', 'benchmarks include continuous control', 'a robot or a plant can be damaged'). So part of the ten-row difference is by construction: an assumed D-RL against an observed D-AGENT. A real deployed RL policy on a robot also has hidden state.",
+  "evidence": "paper.tex:432 'their cells record what the tools assume of them'; paper.tex:443 'T-RL and D-RL: the cited tools assume an observed state'; paper.tex:447 'D-RL holds in part: a robot or a plant can be damaged.'",
+  "severity": "unsupported",
+  "key": "none",
+  "fix": "Say in the bullet that D-RL is the setting as the cited tools assume it, not a measured deployment; or grade the D-RL cells by one standard in 085_setting_conditions."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 6, third view (paper.tex:259)",
+  "claim": "True for S2 and S3: the cited CMDP method runs model-free with neural networks, and the safe-exploration method uses a Gaussian-process safety model with a deep RL learner.",
+  "problem": "The paper's claim 'concerns assurance, not benefit'. Here it grants the relaxation of S2 and S3 on the evidence that methods run. For guarantees the cases differ: Wachi et al. prove their theorem without finite spaces, but the Satija guarantee is in the finite proofs and the neural version has none (Table 1, S3 'proofs'). Settled item R47 judged a different point (the scope of 'binding').",
+  "evidence": "paper.tex:490 'S3, in proofs only: ... the experiments use neural networks on continuous control'; paper.tex:232 'methods survive without their finiteness guarantees'.",
+  "severity": "overclaim",
+  "key": "none",
+  "fix": "'True of methods for S2 and S3, and of one guarantee: ... (Wachi et al. prove safety with features in R^d); the neural version of the CMDP method has no proof.'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 7, open problem 2 (paper.tex:278)",
+  "claim": "This weakens S6 to two assumptions: that halting is safe and, for near-optimality, the return assumption below. Assume that, and a delta-uncertainty quantifier",
+  "problem": "Caused by the round-10 fix. 'Assume that' now follows a sentence with two assumptions, so its referent is unclear.",
+  "evidence": "paper.tex:278",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "'Assume that halting is safe, and a delta-uncertainty quantifier ...'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Abstract (paper.tex:52)",
+  "claim": "keeps its safety theorem under the same assumption and one more, an uncertainty quantifier for the cost of a tool call",
+  "problem": "'one more' reads as an assumption that we add. The quantifier is Assumption 3.4 of Wachi et al.; what is new is that it must exist for the cost of a tool call.",
+  "evidence": "paper.tex:245 'holds \"Under Assumption 3.4\", the uncertainty quantifier (Theorem 4.1)'",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "'under the same assumption and the paper's own, an uncertainty quantifier, here for the cost of a tool call'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 7, open problem 1 (paper.tex:276)",
+  "claim": "Let the observation be (o_auth, o_env) ... Find a method whose return under any i is within epsilon ...",
+  "problem": "The problem does not say what o_auth does. The return must be defined by an objective that o_auth alone sets; without that sentence 'return' has no fixed objective.",
+  "evidence": "paper.tex:276",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Add: 'The objective, and so the return, is set by o_auth alone.'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Table 1 caption (paper.tex:94)",
+  "claim": "A word: needed in part",
+  "problem": "In the S1 column the words 'reward', 'goal' and 'prefs' do not mean that a safety specification is needed in part. Appendix D says for these cells that there is no safety specification and that a reward, a goal or preferences are given in its place.",
+  "evidence": "paper.tex:576 'S1, reward only: there is no safety specification'",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Caption: 'A word: needed in part, or (S1) what is given in place of a safety specification'. The caption is a stamped claim in 095_claims; re-stamp after the change."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read-3",
+  "where": "Section 4 (paper.tex:221)",
+  "claim": "which we count as deployment (§4)",
+  "problem": "The reference points to the section that contains it.",
+  "evidence": "paper.tex:221",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "'which we count as deployment (above)'"
+ }
+]

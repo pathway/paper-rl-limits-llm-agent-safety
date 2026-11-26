@@ -1,0 +1,6 @@
+id,roles,label,definition
+works,named; named_uncited; topic; other,works we read for the tools and citations of McLean et al.,Every row of the tool table
+offered,named; named_uncited; topic,works behind the tools that McLean et al. offer,Tools they name and papers they cite as the RL safety literature
+named_tools,named; named_uncited,works for the techniques that McLean et al. name,"Papers cited for constrained MDPs, reward function alignment and belief-state planning, and our paper for shielding"
+topic_works,topic,papers that McLean et al. cite under a topic,Cited by topic; they do not name the tool
+other_works,other,works that McLean et al. cite for another purpose,Cited but not offered as safety tools

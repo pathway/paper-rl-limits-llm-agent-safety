@@ -1,0 +1,5 @@
+id,label,definition
+U1,objective fixed,Observations cannot set or change the objective (the reward in training; the principal's instruction in deployment)
+U2,reward exogenous,The judgement that defines success does not respond to the agent (the reward or checker in training; the principal's judgement in deployment)
+U3,ignores mechanism,The agent does not reason about the mechanisms that oversee or score it
+U4,one principal,There is one principal

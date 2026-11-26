@@ -1,0 +1,14 @@
+id,kind,locator,text,tex
+e1,theorem,Theorem 4.1,"Theorem 4.1. Let SN denote the set of non-terminal states. Assume r(s) < 0 ∀s ∈ SN . Let R = diag(exp(−r/λ)), where r is the vector of all state rewards. Let Z0 = R−1 . The update rule Zk+1 = R−1 + R−1 Pπd Zk converges to the DR, that is, limk→∞ Zk = Z.",\mbf \Zeta_{k + 1} = \mbf R^{-1} + \mbf R^{-1} \mbf P^{\pi_d} \mbf \Zeta_k
+e2,assumption,Assumption C.1,"Assumption C.1. There is only one start state, s0 , and it is possible to reach any state from s0 under the default policy, i.e., ∃τs0 →s : Pπd (τs0 →s ) > 0 for all s ∈ S.",
+e3,line,,"Importantly, the shortest path from the start state to the goal state passes through low-reward regions and is sub-optimal, so the agent needs to learn to avoid low-reward regions in the environment to achieve the optimal return.",
+e4,line,," Z(s, j) = exp r(s)/λ 1{s=j} + Es′ ∼pπd (s′ |s) Z(s′ , j) , (12) which requires access to the transition probabilities under the default policy.",
+e5,line,,"Here, we lay some of the theoretical foundation underlying the DR in the tabular case by (1) deriving dynamic programming and (2) temporaldifference methods to learn the DR, (3) characterizing the basis for the vector space of the DR, and (4) formally extending the DR to the function approximation case through default features.",
+e6,line,,"2 (S, A, r, p, πd ), where S is the state space, A is the action space, r : S → R is the reward function, p : S×A → ∆(S) is the transition function, and πd is the default policy that assigns non-zero probabilities to all state-action pairs.",
+e7,line,,"We compare RACE with CEO and a uniform random walk in the environments from Figure 1, using 100-step episodes with no terminal states.",
+e8,line,,Note that we assume access to the eigenvectors of the SR and DR prior to training the agent with the potential-based reward.,
+e9,line,,"While we focused on the tabular case for clarity and to be able to evaluate the DR across a range of use cases where reward-agnostic proto-representations have been applied, restricting the scope to this setting remains a limitation of this work.",
+e10,line,,"Sarsa +SR +DR resentations are somewhat at odds with pure exploration, given their R IVER S WIM 25 (0.8) 1,206 (566) 2,964 (252) risk-averse nature, we can still ask",
+e11,line,,"Given the fundamental and theoretical nature of this research, it does not pose any foreseeable negative societal impacts.",
+e12,line,,the agent observes a state,
+e13,line,,prove the convergence for the DP method,

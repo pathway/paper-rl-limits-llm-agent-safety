@@ -1,0 +1,4 @@
+id,kind,locator,text,tex
+e1,line,Intro,"This one was different from anything we had handled before in one important way: it was driven, end to end, by an autonomous AI agent system - and we detected and dissected it largely with AI of our own.",
+e2,line,What we did,"Revoked and rotated the affected credentials and tokens, and began a broader precautionary rotation of secrets.",
+e3,line,,We identified unauthorized access to a limited set of internal datasets and to several credentials used by our services.,

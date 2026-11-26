@@ -1,0 +1,8 @@
+phase,id,posed_as
+Training,T-RL,Classical RL agent while it learns; MDP [@sutton2018]
+Training,T-CHAT,"No tools; whole reply = one action, scored at the end by a learned reward model or a verifier [@ouyang2022; @deepseekai2025]; ""a contextual bandit"" [@samineni2025]"
+Training,T-PRM,"No tools; each reasoning step = one action, scored by a process reward model [@zhang2026]; in our reading a deterministic tree MDP"
+Training,T-AGENT,"Tools in a sandbox; the whole trajectory = one scored sample, as for T-CHAT; ""closer to classic RL"" [@lambert2025, {§13.3}]"
+Deployment,D-RL,"A trained classical policy, frozen and run"
+Deployment,D-CHAT,Deployed chatbot (no tools)
+Deployment,D-AGENT,"Deployed tool-using agent; POMDP with hidden world state, no reset"

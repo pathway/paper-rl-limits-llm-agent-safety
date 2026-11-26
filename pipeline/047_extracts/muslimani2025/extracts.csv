@@ -1,0 +1,5 @@
+id,kind,locator,text,tex
+e1,line,,"In our experiments, we generate these trajectories via RL agents partially trained with different reward functions. However, other sources, such as human demonstrations or trajectories generated through behavioral cloning, could also be used.",
+e2,line,,This metric quantifies the similarity between a human stakeholder’s ranking of trajectory distributions and those induced by a given reward function.,
+e3,line,,"To compute σTAC , we first construct two preference data sets, one from a human (Dh ), assumed to be transitive, and one induced by a given (r, γ) pair.",
+e4,line,,"To apply the Trajectory Alignment Coefficient as a practical reward alignment measure, we must consider finite subsets of trajectory distributions from H(µ).",

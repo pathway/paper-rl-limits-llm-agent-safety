@@ -1,0 +1,6 @@
+id,kind,locator,text,tex
+e1,line,,"It turns out Replit was wrong, and the rollback did work.",
+e2,line,,There is no way to enforce a code freeze in vibe coding apps like Replit.,
+e3,line,,"It kept covering up bugs and issues by creating fake data, fake reports, and worse of all, lying about our unit test.",
+e4,line,Subheading,"AI ignored instruction to freeze code, forgot it could roll back errors, and generally made a terrible hash of things",
+e5,line,,"It said it was impossible in this case, that it had destroyed all database versions.",

@@ -1,0 +1,43 @@
+{
+ "all": [
+  {
+   "id": "F8.0",
+   "i": 0,
+   "gate": {
+    "verdict": "confirmed",
+    "material": true,
+    "reason": "paper.tex:124 says: \"The guarantee of \\citet{wachi2023} depends only on executing actions from the certified safe set; the reward learner can be any RL algorithm.\" wachi2023.txt:328-336 shows MASE also augments the action space with an emergency stop action and penalises it in the reward. wachi2023.txt:405 states \"Theorem 4.1. Under Assumption 3.4, MASE guarantees safety\", so the guarantee also needs a valid uncertainty quantifier. The paper's own later sentence admits \"the safe set needs cost data gathered while acting\", so \"only\" contradicts it. No rejected.csv entry covers this. R34 is about a different \"only\", the one in the U1-U4 comparison. R40 and R31 do not cover it either. The claim K07 survives, but the source is described as needing less than it does.",
+    "source_file": "200_draft/draft.md",
+    "fix": "In 200_draft/draft.md (line 32 bullet), replace \"depends only on executing actions from the certified safe set\" with \"depends on executing only actions from the certified safe set, on an added emergency-stop action, and on a valid uncertainty quantifier (Assumption 3.4)\"."
+   }
+  },
+  {
+   "id": "F8.1",
+   "i": 1,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper's U1 reason (085_setting_conditions/reasons.csv:8, paper.tex:449) says: \"agents in one lab's training runs shared information through a message board [@openai2026c], but no report shows that this changed their objective.\" The reviewer cites openai2026b.txt:113, \"agents adopting goals from one another\". That line comes from a heading that covers \"training and evaluation\" rollouts. Every concrete goal-adoption example in openai2026b.txt:180-184 comes from the Hugging Face incident, which is an evaluation (ExploitGym, with \"GO\" written on the board). The report gives no training-time example of an agent's objective changing. The reviewer admits this: \"training-time goal adoption is not shown either way\". So the reason is not contradicted, and it is consistent with paper.tex:250, which treats the incident as an evaluation case of U1. Rejected finding R02 also covers the message-board-versus-objective point. The \u2713 for U1,T-AGENT is therefore defensible. At most this is a missing nuance, and it does not change any claim in key.csv.",
+    "source_file": "085_setting_conditions/reasons.csv",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F8.2",
+   "i": 2,
+   "gate": {
+    "verdict": "settled",
+    "material": false,
+    "reason": "rejected.csv R55 (\"key claim scored qualify\", round 7 gate) covers K20. It rejected the claim that paper.tex:255 lists too few evidence sources. Paper.tex:255 already names knox2023, muslimani2025 and the simulated and real robot goal-reaching. The new finding adds the Alshiekh car scenario and MNIST (alshiekh2018.txt:904-905, mohammedalamen2025a). Those are only extra domains. The paper's claim, \"We found no LLM-agent experiment in the cited tool papers\", is unaffected, and I confirmed it. The short key.csv:21 text (K20) is a summary of that claim, not a paper statement. The omissions are a completeness nicety, not a wrong fact, quote or citation.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  }
+ ],
+ "fixes": [
+  "F8.0"
+ ],
+ "fixlog": "I applied the one finding, F8.0. The paper builds and all tests pass, and no claim went stale.\n\n**Change made: F8.0**\n- In `200_draft/draft.md`, line 32 bullet, I replaced \"depends only on executing actions from the certified safe set\" with \"depends on executing only actions from the certified safe set, on an added emergency-stop action, and on a valid uncertainty quantifier (Assumption 3.4)\".\n- The sources are `045_fulltext/wachi2023.txt:332-333` (the action space is augmented with the emergency stop action) and `045_fulltext/wachi2023.txt:405` (\"Theorem 4.1. Under Assumption 3.4, MASE guarantees safety...\").\n- I logged the edit in `/usr/local/HAMMER/DYNAMIC/SRC/pathway/PERSONAL_PUZZLES/PERSONAL_RESEARCH_AGENDAS/ML_RL/safety/paper__debunking/096_review/changes/round_8.csv` (1 row).\n\n**Findings skipped:** none.\n\n**Build result:** `wrote .../300_render/out/paper.pdf | 82 of 104 references cited`\n\n**Test counts:**\n\n| Folder | Passed |\n|---|---|\n| 100_analysis | 14 |\n| 300_render | 24 |\n| 047_extracts | 4 |\n| 040_biblio | 3 |\n| 096_review | 4 |\n\n**Claims:** I did not run `stamp.py`, because no claim was stale. No claim in `095_claims/claims.csv` depends on `draft.md`, and the stale check in the build reported nothing.",
+ "checks": [],
+ "repair": null
+}

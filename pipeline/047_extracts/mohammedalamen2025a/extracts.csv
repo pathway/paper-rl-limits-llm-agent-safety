@@ -1,0 +1,11 @@
+id,kind,locator,text,tex
+e1,line,Conclusion,"Second, transition certainty is a strong assumption that will need to be relaxed for additional applications.",
+e2,line,,"In contrast, current approaches typically embed task-specific safety information or explicitly cautious behaviors into the system, which is error-prone and imposes extra burdens on practitioners.",
+e3,line,,"For the rest of this section, assume that all MDPs have reward uncertainty and transition certainty.",
+e4,line,,"First, a critical limitation of our k-of-N CFR implementation is that it is tabular and requires exact policy evaluation to determine the worst-k reward functions.",
+e5,line,,"A finite, discounted MDP, (S, A, p, d∅ , γ), is a finite set of states, S, a finite set of actions, A, a Markovian state transition probability distribution, p(· | s, a) ∈ ∆(S) for all states s and actions a (where ∆(S) is the probability simplex over set S), an initial state distribution d∅ ∈ ∆(S), and a discount factor, γ ∈ [0, 1)2 .",
+e6,line,,"While POMDPs (Åström, 1965), Bayesian RL (Dearden et al., 1998), or distributional RL (Bellemare et al., 2017) may be considered as alternative baselines, these are not applicable in our experiments, as our deterministic environments lack aleatoric uncertainty and are fully observable.",
+e7,line,,"Therefore, the agent does not perform any adaptation after seeing novel states, like other works (Zintgraf et al., 2020; Zhang et al., 2020; Filos et al., 2020; Rigter et al., 2021).",
+e8,assumption,,assumes full state observability during both training and deployment,
+e9,limitation,,transition certainty is a strong assumption,
+e10,line,Introduction,"proving that it is efficient and sound for continuing MDPs under reward uncertainty",

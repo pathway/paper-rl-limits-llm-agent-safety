@@ -1,0 +1,4 @@
+id,kind,locator,text,tex
+e1,assumption,,"Specifically, the tabular reward model convergence guarantees hold only if: i) the environment is tabular with a finite or countably infinite (Halmos, 1960) number of states and actions; ii) each joint state pair (sE , sM ) can be visited infinitely often given infinite exploration; iii) the agent can observe the environment reward for each environment state-action pair with some nonzero probability; and iv) the proxy reward is truthful, meaning r̂tE = rE or r̂tE = ⊥ ∀t.",
+e2,line,,"in POMDPs, the environment state is partially observable, whereas in Mon-MDPs, it is the reward that could be unobservable",
+e3,line,,While this approach is theoretically proven to converge to an optimal policy for solvable Mon-MDPs in tabular settings,

@@ -1,0 +1,8 @@
+id,kind,locator,text,tex
+e1,assumption,Assumption 3.1,"Assumption 3.1 (Stationarity). The MDP is ergodic for any policy π, i.e. the Markov chain characterized by the transition probability P π (xt+1 |xt ) = P at ∈A P(xt+1 |xt , at )π(at |xt ) is irreducible and aperiodic.",
+e2,theorem,Theorem 3.1,"Theorem 3.1 (Consistent Feasibility). Assume that successive policies are updated sufficiently slowly, i.e. π d −VD k (x0 ) TV(πk+1 (·|x), πk (·|x)) ≤ 02D MAX T 2 . Then the policy iteration step given by (SPI) is consistently feasible, i.e. if πk is feasible at x0 then so is πk+1 .","$\TV(\pi_{k+1}(\cdot|x),\pi_k(\cdot|x)) \leq \frac{d_0 - V_{\D}^{\pi_k}(x_0)}{2\textsc{Dmax}T^2}$"
+e3,line,,"Formally, a CMDP is a tuple (X , A, P, r, x0 , d, d0 ), where d : X → [0, D MAX] is the cost function and d0 ∈ R≥0 is the maximum allowed cumulative cost.",
+e4,line,,Our method is implemented as a reduction to any model-free on-policy bootstrap-based RL algorithm and can be applied for deterministic and stochastic policies and discrete and continuous action spaces.,
+e5,assumption,Assumption 3.1,"Assumption 3.1, the corresponding backward Markov chain »# B (π) is also ergodic (Morimura et al., 2010, Prop. B.1). In particular, every policy π can reach the initial state via some path in the transition graph of the backward Markov chain. Thus, the backwards Markov chain is also finite-horizon for some TB , with x0 corresponding to the terminal state.",
+e6,line,,We note that the cost is only a function of states rather than state-action pairs.,
+e7,line,,"Then, the set of feasible policies that satisfy the CMDP is a subset of stationary policies",

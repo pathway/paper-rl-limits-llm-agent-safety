@@ -1,0 +1,68 @@
+[
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "Abstract; Introduction; Section 4 (paper.tex:52, 62, 221, 286)",
+  "claim": "keep their guarantees only under conditions that deployed agents do not meet (abstract); It is not necessary: a tool can help without it, but loses its guarantee (paper.tex:62); seven of eight need in full a condition that fails in D-AGENT (paper.tex:221, 286)",
+  "problem": "The paper treats a proof assumption as a necessary condition. When an assumption of a theorem fails, the theorem is no longer established; that does not show the guarantee is false. The paper's own definition of a filled cell is weaker (paper.tex:461: 'A filled cell means that the tool's guarantee, its problem statement, or its method uses the condition'), and it words the near-optimality case correctly ('the proof of its near-optimality does not carry over', paper.tex:52). 'loses its guarantee' and 'keep their guarantees only under' overclaim: the correct claim is that the guarantee is not established without the condition.",
+  "evidence": "paper.tex:62 'It is not necessary: a tool can help without it, but loses its guarantee.' paper.tex:461 'A filled cell means that the tool's guarantee, its problem statement, or its method uses the condition.'",
+  "severity": "overclaim",
+  "key": "K01",
+  "fix": "paper.tex:62: 'a tool can help without it, but its guarantee is then not established'. Abstract: 'keep their guarantees only under' -> 'have guarantees established only under'. Check the other sentences that say a guarantee is lost or does not survive, and word them as 'not established' where the claim rests only on a failed assumption."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "Section 7, open problem 2 (paper.tex:278)",
+  "claim": "Find a method whose regret against the best policy that meets the constraint is sublinear in the number of episodes.",
+  "problem": "As posed the problem has no solution. Without a reset the state reached before a halt persists into the next episode. Then one exploring action can move the agent into a safe region from which high-reward states are unreachable, and regret against the best constrained policy from the start state grows linearly in the number of episodes for any method. The assumptions given (halting is safe; a safety margin in every state a halt can leave) bound cost, not reachability of reward. Sublinear-regret results for non-episodic RL assume that every state can be reached again (e.g. communicating or weakly communicating MDPs; Jaksch, Ortner and Auer 2010). The problem needs an added reachability assumption within the safe set, or a comparator relative to the current state.",
+  "evidence": "paper.tex:278 'replace its emergency stop, which resets the environment, by a halt that ends the episode in place. The state reached before the halt persists into the next episode.' and 'Find a method whose regret against the best policy that meets the constraint is sublinear in the number of episodes.' The Wachi regret bound is proved with the reset: wachi2023.txt:1679 'By Lemma 8 in Strehl and Littman [34], the total regret can be decomposed'.",
+  "severity": "wrong",
+  "key": "none",
+  "fix": "After 'sublinear in the number of episodes', add: 'Without a further assumption no method can achieve this, because a step that leaves the reachable high-reward states cannot be undone; so assume also that from every state a halt can leave the agent can return, within the safe set, to the states of the best policy, or measure regret against the best policy from the current state.'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "Abstract (paper.tex:52); Conclusion (paper.tex:286)",
+  "claim": "We agree with McLean et al. on a remedy they name for irreversible actions, a shield over actions at inference time, and we state its limit. (abstract); for properties of typed actions, a remedy for irreversible actions is a shield at inference time (conclusion)",
+  "problem": "Calling the shield 'a remedy for irreversible actions' overstates what Section 5 shows. Section 5 excludes free-form code and shell commands ('Free-form code and shell commands are outside the class', paper.tex:243), and the one irreversible incident (Terraform) was a free-form command. The shield enforces rules over action labels; it is a remedy for irreversible actions only when they are typed tool calls that a rule names. The abstract defers the limit ('we state its limit') to later sentences that do not mention free-form commands.",
+  "evidence": "paper.tex:243 'Free-form code and shell commands are outside the class: whether a command deletes a database is a property of its effect, not of its label, as the Terraform case shows.'",
+  "severity": "overclaim",
+  "key": "K01",
+  "fix": "Abstract: 'We agree with McLean et al. on a remedy they name, a shield over actions at inference time, which covers irreversible actions only when they are typed tool calls that its rules name, not free-form code or shell commands such as the Terraform destroy.' Conclusion: 'a remedy for irreversible actions that are typed tool calls is a shield at inference time'."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "Section 5, shield item (paper.tex:243) vs case studies (paper.tex:248) and appendix (paper.tex:423)",
+  "claim": "If the shield sees every tool call and the property is over action labels (no DROP without approval), the automaton is finite ...",
+  "problem": "The paper's example of a shield property is an approval rule, but the case studies infer that approval of the command alone would not have prevented the Terraform loss, and Section 4 says that approval of the command alone makes no state observable and no action undoable (paper.tex:198). The example rule is thus one the paper itself shows to be weak; a shield's safe fallback here is halting, and a rule that halts (blocks) the call is the case the guarantee covers. The two parts of the paper are in tension.",
+  "evidence": "paper.tex:248 'we infer that approval of the command alone would not have prevented the loss.' paper.tex:198 'approval of the command alone makes no state observable and no action undoable'.",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "Change the example to a blocking rule: '(no DROP; halt and ask)', or add after the example: 'the guarantee is that the rule is enforced, not that an approver judges the call well (§ case studies)'."
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "Abstract, Introduction, Section 3 (clarity)",
+  "claim": "One guarantee survives deployment now, ... : that shield, which then enforces a rule list and uses nothing specific to RL. / Where it fails, a claim that the tool 'addresses' a failure needs separate evidence. / Of the four, two are diagnostics",
+  "problem": "Three hard-to-parse sentences: the abstract's colon construction; 'Where it fails' has no clear referent (paper.tex:62, after 'This is a reading, not a count'); 'Of the four' follows three groups of four (paper.tex:126).",
+  "evidence": "paper.tex:52, 62, 126",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "'Where it fails' -> 'Where a condition fails'; 'Of the four' -> 'Of the four with no guarantee'; abstract: 'One guarantee survives deployment now: a shield, for the properties its rules name over typed tool calls, if it sees every call and a safe fallback such as halting exists at every step; it then enforces a rule list and uses nothing specific to RL.'"
+ },
+ {
+  "source": "claude-fable",
+  "lens": "full-read",
+  "where": "300_render/template.tex:1 (paper.tex:1)",
+  "claim": "% Built by build.py from ../draft_conditions_short.md. Edit the markdown, not paper.tex.",
+  "problem": "The comment names an old source file; the draft is 200_draft/draft.md.",
+  "evidence": "300_render/template.tex:1",
+  "severity": "unclear",
+  "key": "none",
+  "fix": "'% Built by build.py from 200_draft/draft.md and the stage tables. Edit those, not paper.tex.'"
+ }
+]

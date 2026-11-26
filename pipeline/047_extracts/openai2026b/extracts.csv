@@ -1,0 +1,6 @@
+id,kind,locator,text,tex
+e1,setting,What happened,"A message board emerges Over the course of May and June, we began reinforcement learning (RL) training runs for multiple new research models that were not intended for public release. One of these models eventually drove the activity behind the Hugging Face incident.",
+e2,setting,What happened,"We did not enable internet access or inter-agent communication for many of the environments in these training experiments. Despite these restrictions, the agents discovered ways to exploit our research infrastructure to communicate with one another and access the internet.",
+e3,line,Accelerating alignment,"When a task is corrupted, broken, or impossible, agents should request clarification or stop safely, rather than pursue increasingly questionable alternatives.",
+e4,line,An ecosystem of misalignment,"gents did not consistently distrust goals passed along by other agents, which could lead agents to be manipulated into engaging in unintended behavior.",
+e5,line,Difficult tasks,where models explicitly reason about their training or evaluation mechanisms in order to maximize reward,

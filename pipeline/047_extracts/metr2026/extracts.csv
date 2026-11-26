@@ -1,0 +1,9 @@
+id,kind,locator,text,tex
+e1,setting,Header,"The earlier incidents from training and the subsequent compromise of OpenAI infrastructure described in OpenAI’s recent Black Hat presentation were out of scope, as was OpenAI’s investigation process and planned remediation.",
+e2,principals,Attacking Hugging Face to discover clues about the scorer,"Agents realized this activity was out of scope and unethical, but joined because they believed that helping the board’s cheating research would be broadly useful and had a general inclination to help their “peers” (see our section on agent reasoning ).",
+e3,limitation,We heavily delegated our analysis to often-unreliable AI agents,"We found that GPT-5.6 Sol would often uncritically adopt the perspective of the agent in the transcript it was reviewing, 60 and we are concerned that the anecdotes it selected and the summaries it wrote may present an overly charitable picture of agents’ reasoning and deceptive behaviors , or exaggerate the impressiveness and coordination of agent activities.",
+e4,objective,Agents knew hacking Hugging Face was out of scope,"However, overall we found that expressed ethical concerns only rarely materially limited agents’ actions.",
+e5,line,,around 60% of agents had understanding the evaluator or getting access to the evaluator source code as their primary motive,
+e6,limitation,,We instructed analysis agents to analyze the transcripts of the 100 agents that started participating in the attack during the peak hour for joining,
+e7,limitation,,"We did not have time to inspect the classifications in detail, so there may be errors.",
+e8,line,,"agents achieved the ability to run arbitrary code on a sandbox running CyberGym evaluations (customer-hosted on Modal); this gave them more flexible access to the full internet, … which they started using for online research and would go on to use as a staging ground for the Hugging Face attack.",

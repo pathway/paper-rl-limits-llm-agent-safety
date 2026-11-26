@@ -1,0 +1,6 @@
+id,kind,locator,text,tex
+e1,line,Appendix G.2,"Third, once a model-based PRM is introduced, it inevitably leads to reward hacking (Gao et al., 2022), and retraining the reward model needs additional training resources and it complicates the whole training pipeline.",
+e2,line,,"Notably, we abstain from applying neural reward models—whether outcome-based or process-based—to reasoning tasks.",
+e3,line,,This decision is predicated on our observation that neural reward models are susceptible to reward hacking during large-scale reinforcement learning.,
+e4,line,,"First, it is challenging to explicitly define a fine-grain step in general reasoning.",
+e5,line,,"We share our failure experiences here to provide insights, but this does not imply that these approaches are incapable of developing effective reasoning models.",

@@ -1,0 +1,9 @@
+id,kind,locator,text,tex
+e1,line,§6.3,In Rooms with obstacles the agent has to reach the goal location on the other end of the environment. In between are a set of dynamic obstacles with random spawning location that move up and down. If the agent collides with one of these obstacles it receives a −1 reward and the episode terminates.,
+e2,line,,"Importantly, until now these methods have been mostly limited to tabular domains where (1) the graph Laplacian matrix was either given or could be fully estimated, (2) performing eigendecomposition on this matrix was computationally tractable, and (3) value functions could be learned exactly.",
+e3,line,,"To do so, we introduce a fully online deep RL algorithm for discovering Laplacianbased options and evaluate our approach on a variety of pixel-based tasks.",
+e4,line,,"4: o ← −1 # No active option 5: Reset environment and observe state s 6: end if 7: τ ← U (0, 1) < 1/D ∨ τ 8: if τ then 9: if U (0, 1) < ϵ then 10:",
+e5,line,,"As aforementioned, we validate DCEO’s efficacy on pixel-based versions of the environments in Figure 1, with episodes being at most 100 steps long.",
+e6,line,,"This temporally-extended exploration allows the agent to be purposeful and to ensure that parts of the environment that are unlikely to be visited by chance can be visited more often (Machado & Bowling, 2016; Jinnai et al., 2019; Ecoffet et al., 2021).",
+e7,line,,"An important detail of the count-based baseline is that we do not estimate pseudo-counts (Bellemare et al., 2016), we instead provide the agent with perfectly accurate state counts, which provide a significant advantage to this baseline.",
+e8,line,,to even higher dimensional environments and to partial observability,

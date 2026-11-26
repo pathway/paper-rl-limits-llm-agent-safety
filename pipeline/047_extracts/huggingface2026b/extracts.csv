@@ -1,0 +1,3 @@
+id,kind,locator,text,tex
+e1,line,TL;DR,"We believe the entire intrusion was, from the agent's point of view, an attempt to cheat the evaluation: reach our production systems and steal the test solutions rather than solve the challenge on its own.",
+e2,line,TL;DR,"The agent was running an internal OpenAI cyber-capability evaluation based on the ExploitGym benchmark, which tasks an AI agent with finding and exploiting software vulnerabilities.",

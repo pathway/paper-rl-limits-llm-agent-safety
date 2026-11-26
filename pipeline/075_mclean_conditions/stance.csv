@@ -1,0 +1,11 @@
+condition,stance,locator,evidence,evidence_ids,by
+S1,partly,§5; §3.5,"They grant that the framework ""does not inherently solve the foundational challenge of specifying a flawless objective function for superhuman systems"", a limit they tie to superhuman systems. The state of their POMDP includes ""the user's intents, safety constraints"", which they say the agent is unlikely to observe fully.",e6; e7,LLM
+S2,concedes,§5,"Classical safety algorithms often rely on ""known transition matrices"" (in their scaling-gap argument).",e5,LLM
+S3,concedes,§5,"Classical algorithms often rely on ""tabular representations"".",e5,LLM
+S4,builds on,§3.5,"Partial observability is the basis of their POMDP mapping: ""This is a lossy process"".",e9,LLM
+S5,partly,§3.5; §3.6.2,"Discussing the reward function, they distinguish ""training (updating the policy)"" from ""deployment (freezing the policy)"", which is the phase split behind S5, but take the deployed policy as frozen and do not discuss adaptation in context or ask which tools need control of the learner.",e10,LLM
+S6,states,§3.6.2,"From an irreversible state ""it is impossible to return to a safe or functional state"", and they contrast deployment with ""games or simulations"" where agents can be reset. They do not note that the safe-exploration paper they cite assumes a reset.",e11; e4,LLM
+U1,partly,§3.6.1,"The reward is a function of the prompt, which the agent observes: ""The only way that a user can interact with the AI agent during deployment is through the initial prompt"". They consider a prompt that is misspecified, not a later observation that replaces it.",e12,LLM
+U2,not discussed,§3.6.1,Hacking of a proxy reward is discussed; a judgement of success that the agent can move is not.,e25,LLM
+U3,partly,§3.6.1; §4,"An agent ""will likely find a way to hack this reward function"", a proxy ""prone to gaming"". Monitors and shields as objects of the agent's reasoning are not considered.",e25; e26,LLM
+U4,not discussed,§2,"The scope is ""the individual AI agent that is built on top of a LLM"", and the argument ""scales naturally to Agentic AI systems""; several principals of one agent are not considered.",e14; e27,LLM

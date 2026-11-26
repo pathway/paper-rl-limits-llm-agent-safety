@@ -1,0 +1,74 @@
+{
+ "all": [
+  {
+   "id": "F9.0",
+   "i": 0,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are in the paper, but the paper does not treat an assumption as necessary. paper.tex:62 says \"It is not necessary: a tool can help without it, but loses its guarantee.\" That sentence denies that a condition is necessary for the tool to help. It says the guarantee, which was derived under the condition, no longer holds as derived. The paper defines a condition as \"an assumption under which a tool's guarantee was derived\" (:62), which matches the finding's cited filled-cell definition at :461. The paper also hedges the near-optimality case as \"the proof ... does not carry over\" (:52). The reviewer's alternative, \"guarantee not established\", is a wording preference. The claim is about assurance (\"Our claim concerns assurance, not benefit\", :62), so it does not turn a proof assumption into a falsity claim. No wrong fact, quote, count or citation is involved, and K01 is unchanged. No entry in rejected.csv covers this exact point, but R43 and R56 settle nearby readings of the same sentences. This is a nice-to-have qualification.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F9.1",
+   "i": 1,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are in paper.tex:278. The paper labels this \"open problem 2\" and claims no solution. The finding says \"as posed the problem has no solution\". That is the reviewer's own unproven lower-bound argument, not a fact in any source. The paper does not say regret is achievable, so nothing it asserts is false. The finding's key is \"none\", so it touches no key claim. The paper already says near-optimality is open because the state reached before a halt persists (draft.md:69, discussed in rejected.csv R31). Whether the problem needs a reachability assumption is a nice-to-have qualification on an open question. The finding's own evidence line shows the Wachi regret bound is proved with a reset, which the paper also states. I found no rejected.csv entry about regret solvability, so it is not settled. It is still refuted as a wrong fact.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F9.2",
+   "i": 2,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The paper states the limit the finding says is missing. Conclusion (paper.tex:286): \"for properties of typed actions, a remedy for irreversible actions is a shield at inference time. It does not cover free-form commands such as the Terraform destroy.\" The finding quotes only the first sentence. The abstract (paper.tex:52) says \"we state its limit\" and then gives it: \"for the properties that its rules name over typed tool calls, if the shield sees every call and a safe fallback ... exists\". Section 5 (paper.tex:243) excludes free-form code and shell commands, and it notes the Terraform destroy was a free-form command. The finding's complaint that the abstract's later sentences do not mention free-form commands is a wording preference. \"Typed tool calls\" already excludes them. This matches the shield-scope points rejected in R43 and R53 and matches key K01, which says \"except a shield over properties of typed tool calls\".",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F9.3",
+   "i": 3,
+   "gate": {
+    "verdict": "refuted",
+    "material": false,
+    "reason": "The quotes are in the paper. Line 243 reads \"no \\texttt{DROP} without approval\", and line 248 reads \"we infer that approval of the command alone would not have prevented the loss\". The paper's section on phases says \"approval of the command alone makes no state observable and no action undoable\". The two statements do not contradict each other, though. The shield guarantee is that the named rule is enforced on every tool call, and the shield blocks a DROP until approval is given. The paper claims no more than that. It says \"S1 holds only in part: the rule covers only what it names\". It also says \"Free-form code and shell commands are outside the class... as the Terraform case shows\", and that \"the guarantee is only as strong as the components that enforce them\". The Terraform destroy was a free-form command, so the example rule would not have caught it, and the paper says so. The reviewer's own fix concedes the point: the guarantee is rule enforcement, not the quality of the approver's judgement. The example is a wording choice, and no fact, count or key claim is wrong. The finding's own \"severity\" is \"unclear\". The related rejected.csv entries R48 and R53 also confirm that the shield's conditions are stated in full.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F9.4",
+   "i": 4,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "The quoted sentences are in paper.tex (abstract: \"One guarantee survives deployment now, for the properties that its rules name over typed tool calls, if the shield sees every call ... exists at every step: that shield, which then enforces a rule list\"; line 62: \"Where it fails, a claim that the tool ``addresses'' a failure needs separate evidence.\"; line 126: \"Of the four, two are diagnostics\"). The finding is only about how readable these sentences are. It reports no wrong fact, quote, count or citation, and no contradiction. It names no missing qualification for any claim in key.csv, and the paper's meaning is unchanged. By the task's own rule, wording and style findings are not material.",
+    "source_file": "200_draft/draft.md",
+    "fix": ""
+   }
+  },
+  {
+   "id": "F9.5",
+   "i": 5,
+   "gate": {
+    "verdict": "confirmed",
+    "material": false,
+    "reason": "Line 1 of 300_render/template.tex and of out/paper.tex reads \"% Built by build.py from ../draft_conditions_short.md. Edit the markdown, not paper.tex.\" The real draft is 200_draft/draft.md, so the comment is stale. It is a LaTeX comment, so it does not render. It is not a wrong fact in the paper, a citation, a count, or a claim in key.csv. rejected.csv has no entry for it.",
+    "source_file": "300_render/template.tex",
+    "fix": ""
+   }
+  }
+ ],
+ "fixes": [],
+ "fixlog": null,
+ "checks": [],
+ "repair": null
+}

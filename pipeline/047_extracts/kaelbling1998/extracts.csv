@@ -1,0 +1,5 @@
+id,kind,locator,text,tex
+e1,line,§1,"This is essentially a planning problem: given a complete and correct model of the world dynamics and a reward structure, find an optimal way to behave.",
+e2,line,,"Basic framework A Markov decision process can be described as a tuple hS, A, T , Ri, where • S is a finite set of states of the world; • A is a finite set of actions; • T : S × A → Π(S) is the state-transition function, giving for each world state and agent action, a probability distribution over world states (we write T (s, a, s 0 ) for the probability of ending in state s 0 , given that the agent starts in state s and takes action a); and",
+e3,line,,"We then outline a novel algorithm for solving POMDPs off line and show how, in some cases, a finite-memory controller can be extracted from the solution to a POMDP.",
+e4,line,,since the underlying state is not fully observable,

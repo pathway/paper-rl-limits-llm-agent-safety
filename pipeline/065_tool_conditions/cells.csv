@@ -1,0 +1,85 @@
+tool,condition,display,reason,evidence_type,evidence,hits_reviewed,by
+altman1999,S1,✓,"needed: the constrained problem minimises a cost ""subject to"" bounds $V_k$ that ""are some given constants"", with ""given immediate cost functions"".",quote,e2; e3; e4,,LLM
+altman1999,S2,✓,"needed: the model is given with its transition probabilities (""Pxay is the probability of moving from state x to y if action a is chosen""), and the linear program is written in them. The book notes that in other models such parameters ""are unknown"" and must be estimated.",quote,e12; e13,,LLM
+altman1999,S3,Part I,"in Part I: it assumes ""a finite number of states"" and ""a finite set of actions""; Part II allows countable states under uniform Lyapunov conditions, which make the problem ""almost equivalent to one with a finite state space"".",quote,e6; e7; e8,,LLM
+altman1999,S4,✓,"needed: policies ""may use information on the current state, and of previous actions and states"".",quote,e14,,LLM
+altman1999,S5,,not needed: the policy is computed by linear programming; there is no learner.,absence,,0,LLM
+altman1999,S6,expect.,"in expectation: the book focuses on costs ""specified in terms of expectations""; it reports the criticism that such a model constrains the average and not ""the actual"" cost of one run.",quote,e9; e1,,LLM
+satija2020,S1,✓,"needed: the CMDP adds a cost function $d$ and ""the maximum allowed cumulative cost"" $d_0$.",quote,e3,,LLM
+satija2020,S2,,"not needed: the method is ""a reduction to any model-free on-policy bootstrap-based RL algorithm"".",quote,e4,,LLM
+satija2020,S3,proofs,"in proofs only: the proofs use transition matrices and vectors over the state set, and a linear program with one constraint per state ($\forall x \in \mathcal{X}$); the experiments use neural networks on continuous control.",judgement,,,LLM
+satija2020,S4,✓,"needed: feasible policies are ""a subset of stationary policies"", which map states to actions, and ""the cost is only a function of states"".",quote,e7; e6,,LLM
+satija2020,S5,✓,"needed: safety during training holds only if ""successive policies are updated sufficiently slowly"" (Theorem 3.1).",quote,e2,,LLM
+satija2020,S6,✓,"needed: ""The MDP is ergodic for any policy"" (Assumption 3.1), and training runs over many episodes.",quote,e1,,LLM
+wachi2023,S1,threshold,"the threshold is given, the cost is learned: the threshold ""is known at time h""; the unknown cost must be regular enough for a ""δ-uncertainty quantifier"" (Assumption 3.4), for example with a known feature map.",quote,e5; e2,,LLM
+wachi2023,S2,,not needed: the transition probabilities are not given.,absence,,1,LLM
+wachi2023,S3,,"not needed: the provable variant uses features in $\mathbb{R}^d$, and the practical variant uses Gaussian processes on Safety Gym.",absence,,0,LLM
+wachi2023,S4,✓,"needed: ""with a given (fully-observable) state"".",quote,e7,,LLM
+wachi2023,S5,filter,"a filter with a penalty: the safety guarantee (Theorem 4.1) holds when the agent executes only actions in the certified safe set; the reward is optimised by ""an arbitrary RL algorithm"", to which the method adds the stop action and a penalty for using it.",quote,e8,,LLM
+wachi2023,S6,✓,"needed by the safety theorem as posed: its proof takes ""an emergency stop action"" to be safe, ""safety is guaranteed with a probability of 1"", and the stop is defined as a transition to the initial state, a reset (Assumption 3.3). Repeated episodes also serve the near-optimality results.",quote,e1; e4,,LLM
+alshiekh2018,S1,✓,"needed: safe RL is defined as ""satisfying a temporal logic safety specification"", which is given as an automaton.",quote,e5,,LLM
+alshiekh2018,S2,abstr.,"an abstraction only: the method assumes ""We have constructed an abstraction"" (Assumption 1), which ""has to be conservative with respect to the behavior of the real MDP""; the full dynamics are not needed.",quote,e6; e1,,LLM
+alshiekh2018,S3,abstr.,"the abstraction only: it ""may have finitely many states even if the MDP has infinitely many states"".",quote,e1,,LLM
+alshiekh2018,S4,label,"labels only: the shield reads the state through an ""observer function"" that maps states to labels.",quote,e3,,LLM
+alshiekh2018,S5,input,"not for safety, in part for learning: the learner ""does not even need to know that it is shielded"", but Assumption 1 asks that ""The learner accepts elements from S × Q as state input"".",quote,e4; e6,,LLM
+alshiekh2018,S6,,not needed: the shield checks every action when it is taken.,absence,,2,LLM
+muslimani2025,S1,prefs,"preferences in place of a specification: the reference is ""a human stakeholder's"" ranking of trajectories, ""assumed to be transitive"".",quote,e2; e3,,LLM
+muslimani2025,S2,,not needed: the metric compares rankings of sampled trajectories.,absence,,1,LLM
+muslimani2025,S3,,"not needed: it uses ""finite subsets of trajectory distributions"".",quote,e4,,LLM
+muslimani2025,S4,,not needed by the metric: the human ranks trajectories shown as video clips.,absence,,0,LLM
+muslimani2025,S5,,not needed: the metric is computed before training.,absence,,1,LLM
+muslimani2025,S6,,"not needed: the metric needs trajectories to rank, not repeated trials. In the paper they come from ""RL agents partially trained with different reward functions"", but ""human demonstrations"" could be used.",quote,e1,,LLM
+mohammedalamen2025a,S1,,"not needed: the method uses no ""task-specific safety information"".",quote,e2,,LLM
+mohammedalamen2025a,S2,✓,"needed: the theory assumes ""reward uncertainty and transition certainty"", and the authors call transition certainty ""a strong assumption""; the implementation ""requires exact policy evaluation"".",quote,e3; e1; e4,,LLM
+mohammedalamen2025a,S3,✓,"needed: ""A finite, discounted MDP""; the implementation ""is tabular"".",quote,e5; e4,,LLM
+mohammedalamen2025a,S4,✓,"needed: the method ""assumes full state observability during both training and deployment"".",quote,e8,,LLM
+mohammedalamen2025a,S5,training,"in training only: the robust policy is computed before deployment; afterwards the agent ""does not perform any adaptation after seeing novel states"".",quote,e7,,LLM
+mohammedalamen2025a,S6,,not needed: behaviour at deployment is zero-shot.,absence,,0,LLM
+mohammedalamen2025b,S1,reward,"reward only: there is no safety specification; ""it is the reward that could be unobservable"".",quote,e2,,LLM
+mohammedalamen2025b,S2,,not needed: the agent learns a reward model and a Q-function from samples.,absence,,2,LLM
+mohammedalamen2025b,S3,tabular,"tabular, not strictly finite: the guarantee holds only if the environment is tabular with ""a finite or countably infinite"" number of states and actions; the function-approximation version studied in the paper has no guarantee.",quote,e1,,LLM
+mohammedalamen2025b,S4,✓,"needed: the agent receives the environment and monitor states; ""in POMDPs, the environment state is partially observable, whereas in Mon-MDPs, it is the reward that could be unobservable"".",quote,e2,,LLM
+mohammedalamen2025b,S5,✓,"needed: the guarantee is about a learning algorithm that the designer runs; it is ""theoretically proven to converge to an optimal policy for solvable Mon-MDPs in tabular settings"", and the ""convergence guarantees hold only if"" its conditions are met.",quote,e3; e1,,LLM
+mohammedalamen2025b,S6,✓,"needed: ""each joint state pair … can be visited infinitely often"".",quote,e1,,LLM
+kaelbling1998,S1,reward,"reward only: the model is given ""a reward structure"" and no separate safety specification.",quote,e1,,LLM
+kaelbling1998,S2,✓,"needed: planning starts from ""a complete and correct model of the world dynamics and a reward structure"".",quote,e1,,LLM
+kaelbling1998,S3,✓,"needed: states, actions and observations are each ""a finite set"".",quote,e2,,LLM
+kaelbling1998,S4,,"not needed: partial observability is the subject of the paper; ""the underlying state is not fully observable"".",quote,e4,,LLM
+kaelbling1998,S5,,"not needed: the paper solves POMDPs ""off line""; there is no learner.",quote,e3,,LLM
+kaelbling1998,S6,,"not needed: the policy is computed by planning, not from trials.",absence,,4,LLM
+vasan2024,S1,goal,"a known goal: −1 reward per step ""with termination upon reaching the goal state"".",quote,e2,,LLM
+vasan2024,S2,,"not needed: the authors describe ""Our model-free reinforcement learning system"".",quote,e8,,LLM
+vasan2024,S3,,"not needed: ""continuous state space S and action space A"".",quote,e3,,LLM
+vasan2024,S4,✓,"needed: the task is an MDP in which ""the agent receives the next state""; the robot policies are learned from pixels.",quote,e4,,LLM
+vasan2024,S5,✓,"needed: the result is about training; the authors ""identify the goal-hit rate of the initial policy as a robust early indicator for learning success"".",quote,e9,,LLM
+vasan2024,S6,✓,"needed: ""If the agent exceeds the time limit, we reset the environment"".",quote,e1,,LLM
+knox2023,S1,prefs,"a stated reward function and human judgement: ""If there is human consensus that one trajectory is better than another, the reward function should agree.""",quote,e1,,LLM
+knox2023,S2,,"not needed: the checks evaluate a reward function ""independently of which reinforcement learning algorithms are chosen to optimize with respect to it"".",quote,e2,,LLM
+knox2023,S3,,not needed: the checks compare a few abstract trajectories.,absence,,0,LLM
+knox2023,S4,,"not needed: the checks read the reward function, not the state.",absence,,0,LLM
+knox2023,S5,,not needed: the checks apply before training.,absence,,0,LLM
+knox2023,S6,check 4,"check 4 only: it applies ""If learned policies show a pattern of undesirable behavior"", so it needs trained policies.",quote,e1,,LLM
+tse2025,S1,reward,"reward only: low-reward regions are avoided through reward; the agent learns ""to avoid low-reward regions"".",quote,e3,,LLM
+tse2025,S2,DP only,"the DP method ""requires access to the transition probabilities under the default policy""; the TD method does not.",quote,e4,,LLM
+tse2025,S3,✓,"needed: the guarantee is the convergence of the DP method (Theorem 4.1), stated with $R$ built from ""the vector of all state rewards"", and the theory is laid ""in the tabular case""; default features, a first step beyond it, come with no convergence proof.",quote,e1; e5,,LLM
+tse2025,S4,✓,"needed: ""the agent observes a state"" of the MDP at every step.",quote,e12,,LLM
+tse2025,S5,✓,"needed: the representation is learned by the designer's own DP or TD updates, and the authors ""prove the convergence for the DP method"".",quote,e13,,LLM
+tse2025,S6,exper.,"in the experiments only: grid worlds with ""100-step episodes"". Assumption C.1, that ""it is possible to reach any state from s0 under the default policy"", serves one appendix result and not the convergence theorem.",quote,e7; e2,,LLM
+klissarov2023,S1,reward,"reward only: danger enters as reward; ""If the agent collides with one of these obstacles it receives a −1 reward and the episode terminates.""",quote,e1,,LLM
+klissarov2023,S2,,"not needed: earlier methods needed the Laplacian ""given or could be fully estimated""; this one approximates it online.",quote,e2,,LLM
+klissarov2023,S3,,"not needed: ""pixel-based tasks"", Montezuma's Revenge and MiniWorld.",quote,e3,,LLM
+klissarov2023,S4,,"not needed: the method is tested ""to even higher dimensional environments and to partial observability"" (MiniWorld).",quote,e8,,LLM
+klissarov2023,S5,✓,"needed: exploration is a property of the training algorithm, ""a fully online deep RL algorithm for discovering Laplacianbased options"".",quote,e3,,LLM
+klissarov2023,S6,✓,"needed: each episode begins with ""Reset environment and observe state s"", episodes are ""at most 100 steps long"", and the aim is that states ""that are unlikely to be visited by chance can be visited more often"".",quote,e4; e5; e6,,LLM
+elelimy2025,S1,reward,"reward only: ""the agent's goal is a preference relation over histories"", represented by a reward function.",quote,e3,,LLM
+elelimy2025,S2,,not needed: the environment is any map from histories and actions to observations.,absence,,0,LLM
+elelimy2025,S3,"A, O, S","actions, observations and agent states only: ""we assume a finite action space"" and ""a finite observation space"", and the agent's state set is finite; histories are unbounded. A token vocabulary meets this.",quote,e4,,LLM
+elelimy2025,S4,,"not needed: the state is ""some fixed partition of the histories"", ""the agent's own representation of the history"".",quote,e5; e6,,LLM
+elelimy2025,S5,policy,"a condition on the policy, not on its update: the estimator of deviation regret is consistent only for ""agents λ that take every action with probability at least c > 0 in every timestep"".",quote,e1,,LLM
+elelimy2025,S6,,"not needed: ""This inability to revisit states renders ergodicity assumptions unrealistic for real-world settings.""",quote,e2,,LLM
+lee2025,S1,goal,"a goal and features given by the designer: detection uses ""goal-relevant features"" that are ""predefined"".",quote,e3; e4,,LLM
+lee2025,S2,,"not needed: goal-conditioned RL in which ""the state transition model is unknown"".",quote,e5,,LLM
+lee2025,S3,,not needed: continuous navigation and manipulation tasks.,absence,,0,LLM
+lee2025,S4,✓,"needed: the policy ""maps the current state and the current goal"" to actions.",quote,e6,,LLM
+lee2025,S5,✓,"needed: a training method; ""The forward policy is trained to solve tasks and the reset policy is trained to reset the environment.""",quote,e15,,LLM
+lee2025,S6,manual,"manual resets remain: the method reduces resets, but RSA still asks for manual ""resets only when the agent enters irreversible states"", and ""RSA cannot prevent an agent from entering irreversible states before the associated behaviors have been encoded.""",quote,e7; e1,,LLM
